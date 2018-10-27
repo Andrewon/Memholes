@@ -43,6 +43,8 @@
 
 ## End of Danny's User Stories
 
+## Begin of David's User Stories
+
 - Report Duplicates
   - Description: User can combine duplicate pothole reports
   - Estimate: 1
@@ -72,6 +74,8 @@
   - Estimate: 0.5
   - Priority: 85
   - Status: Not Started
+
+## End of David's User Stories
 
 ## Begin of Andy's User Stories
 
