@@ -1,7 +1,7 @@
 # Definitions
 
-**Project:** xxx (Nickname of project goes here)
+**Project:** MemHoles
 
-## xxx (Second-level headings optionally may be used to organize definitions)
+## Basic Definitions
 
-xxx (Definitions of terms and concepts go here)
+- "pin" = "graphical map marker"
