@@ -82,25 +82,25 @@
   - Status: Not Started
 
 - Verify fixed pothole
-- Description: Users can verify if potholes marked as fixed is correct.
+  - Description: Users can verify if potholes marked as fixed is correct.
   - Estimate: 2
   - Priority: 10
   - Status: Not Started
 
 - Hide fixed pothole
-- Description: Users can hide fixed potholes pin on the map.
+  - Description: Users can hide fixed potholes pin on the map.
   - Estimate: 4
   - Priority: 40
   - Status: Not Started
 
 - Zoom in
-- Description: User can zoom in or out on the map.
+  - Description: User can zoom in or out on the map.
   - Estimate: .3
   - Priority: 30
   - Status: Not Started
 
 - Name potholes
-- Description: User can name the potholes.
+  - Description: User can name the potholes.
   - Estimate: 1
   - Priority: 10
   - Status: Not Started
