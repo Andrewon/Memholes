@@ -42,3 +42,33 @@
   - Status: Not Started
 
 ## End of Danny's User Stories
+
+- Report Duplicates
+  - Description: User can combine duplicate pothole reports
+  - Estimate: 1
+  - Priority: 55
+  - Status: Not Started
+
+- Attach Picture
+  - Description: User can attach picture of pothole from phone or computer
+  - Estimate: 1
+  - Priority: 35
+  - Status: Not Started
+
+- Report Fixed
+  - Description: User can mark at reported pothole as fixed
+  - Estimate: 0.5
+  - Priority: 40
+  - Status: Not Started
+
+- Update Report
+  - Description: User can add information to existing reported pothole
+  - Estimate: 0.5
+  - Priority: 45
+  - Status: Not Started
+
+- Scale Potholes
+  - Description: User can rate potholes on a scale of 1 to 10 on severity
+  - Estimate: 0.5
+  - Priority: 85
+  - Status: Not Started
