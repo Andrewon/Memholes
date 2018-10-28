@@ -110,3 +110,37 @@
   - Status: Not Started
 
 ## End of Andy's User Stories
+
+## Begin of Thomas' User Stories
+
+- Verify existing potholes
+  - Description: Users can vote to verify the existence of a pothole.
+  - Estimate: 1
+  - Priority: 40
+  - Status: Not started
+
+- Display verified potholes
+  - Description: Users can choose to only show (or not) verified potholes.
+  - Estimate: 2
+  - Priority: 40
+  - Status: Not started
+
+- Theme selection
+  - Description: Users can select a light or dark theme for the web app.
+  - Estimate: 3
+  - Priority: 20
+  - Status: Not started
+
+- View own submissions
+  - Description: Users can choose to view their own submissions on a map and list.
+  - Estimate: 2
+  - Priority: 30
+  - Status: Not started
+
+- Update notifications
+  - Description: Users can choose to receive email notifications when their submissions are updated.
+  - Estimate: 2
+  - Priority: 30
+  - Status: Not started
+
+## End of Thomas' User Stories
