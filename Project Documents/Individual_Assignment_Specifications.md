@@ -15,6 +15,7 @@
 ## Tasks: xxx (Team Member Name)
 
 ### Task 1: xxx (Task Name)
+
 - Description: xxx (Task Description)
 - How to Evaluate: xxx (Instructions)
 - Outcome of Task: xxx (Description; filled in at end of iteration)
