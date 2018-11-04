@@ -10,8 +10,6 @@
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-## Begin Danny's User Stories
-
 - Obtain Current Location
   - Description: User will be able to provide current location manually or allow mobile device to provide current location
   - Estimate: 1.5 Days
@@ -41,10 +39,6 @@
   - Estimate: 1
   - Priority: 90
   - Status: Not Started
-
-## End of Danny's User Stories
-
-## Begin of David's User Stories
 
 - Report Duplicates
   - Description: User can combine duplicate pothole reports
@@ -76,10 +70,6 @@
   - Priority: 85
   - Status: Not Started
 
-## End of David's User Stories
-
-## Begin of Andy's User Stories
-
 - Mobile responsive
   - Description: User can use the web app on mobile devices.
   - Estimate: 1
@@ -109,10 +99,6 @@
   - Estimate: 1
   - Priority: 10
   - Status: Not Started
-
-## End of Andy's User Stories
-
-## Begin of Thomas' User Stories
 
 - Verify existing potholes
   - Description: Users can vote to verify the existence of a pothole.
@@ -144,4 +130,15 @@
   - Priority: 30
   - Status: Not started
 
-## End of Thomas' User Stories
+- Create Account
+  - Description: User can create an account.
+  - Estimate: 1
+  - Priority: 80
+  - Status: Not started
+
+- Login to Account
+  - Description: User is able to login to existing account.
+  - Estimate: 2
+  - Priority: 80
+  - Status: Not started
+
