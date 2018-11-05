@@ -5,7 +5,7 @@
 
 ## Special Roles
 
-- Project Coordinator: xxx (Team Member Name)
+- Project Coordinator: Danny Chamberlin
 - Quality Assurance Czar: Thomas Goodman
 - Video Demo Creators:
   - xxx, 999 (Team Member Name, Number of Points; filled in at end of iteration)
