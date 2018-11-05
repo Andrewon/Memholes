@@ -17,7 +17,7 @@
 ### Task 1: Show Verify Column if Admin Bit Set
 
 - Description: Only show verify column if current user is an administrator.
-- How to Evaluate: If user is an administrator they can see verify column. If user is not an administrator then have verify column missing.
+- How to Evaluate: If user is an administrator they can see verify column. If user is not an administrator then the verify column missing.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 ### Task 2: Update Verify Column for Each Checked in Table
@@ -26,23 +26,66 @@
 - How to Evaluate: If the user is able to change the verification status of a selected pothole from the website.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 3: Update Report
+### Task 3: Show Edit Name if User is Submitter
 
-- Description: User can add information to existing reported potholes.
-- How to Evaluate: If a user can add more information or edit an existing pothole from the website.
+- Description: Only show edit name if current user is poster.
+- How to Evaluate: If user is the poster they can see edit name option. If user is not poster then edit name is missing.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 4: Report Pothole as Fixed
+### Task 4: Update Name Column of Selected Pothole
 
-- Description: User can mark reported pothole as fixed.
-- How to Evaluate: If a user can mark a reported pothole as fixed from the website.
+- Description: User is able to change the pothole name of a selected pothole.
+- How to Evaluate: If the user is able to change the name of a selected pothole from the website.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 ### Task 5: Report Duplicate Potholes
 
-- Description: User can combine duplicate pothole reports.
-- How to Evaluate: If a user can combine duplicate potholes from the website.
+- Description: User can submit a report that two potholes are the same from the list view.
+- How to Evaluate: If a user can report duplicate potholes from the website.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 6: Show Combine Option if Admin Bit Set
+
+- Description: Only show combine option if current user is an administrator.
+- How to Evaluate: If user is an administrator they can see combine option. If user is not an administrator then the combine option missing.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 7: Combine Duplicate Posts
+
+- Description: User is able to combine submissions.
+- How to Evaluate: If user is able to combine submissions from website.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 8: Report Fixed Potholes
+
+- Description: User can submit a report that a pothole is fixed.
+- How to Evaluate: If a user can report a fixed potholes from the website.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 9: Show Fixed Option if Admin Bit Set
+
+- Description: Only show fixed option if current user is an administrator.
+- How to Evaluate: If user is an administrator they can see fixed option. If user is not an administrator then the fixed option missing.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 10: Update Fixed Column for Each Checked in Table
+
+- Description: User is able to change the fixed status of a selected pothole.
+- How to Evaluate: If the user is able to change the fixed status of a selected pothole from the website.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 11: Show Edit Pothole if Admin Bit Set
+
+- Description: Only show edit pothole if current user is administrator.
+- How to Evaluate: If user is an administrator they can see edit pothole option. If user is not an administrator then the edit pothole option is missing.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 12: Update Entry of Selected Pothole
+
+- Description: User is able to change the pothole information.
+- How to Evaluate: If the user is able to edit a selected pothole from the website.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
 
 ## Tasks: "Ty" Thomas Goodman
 
