@@ -118,3 +118,29 @@
 - Description: The map needs to be zoomable in some fashion.
 - How to Evaluate: If the map is zoomable.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
+
+## Tasks:Andy Ta
+
+### Task 1: Pin Pothole on Map
+
+- Description: Get Longitude and Latitude of selected location.
+- How to Evaluate: Longitude and Latitude is added to the database.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 2: Rate Existing Potholes
+
+- Description: Increment entry in database.
+- How to Evaluate: If the user is able to select a pothole and change its rating from 1 to 10.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 3: View Fixed Pothole
+
+- Description: Query the database for fixed pothole location.
+- How to Evaluate: Website should only display fixed pothole when select view fixed pothole.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
+
+### Task 4: Display Verified Potholes
+
+- Description: Query the database for verified potholes.
+- How to Evaluate: When user select this mode, the website should only display verified potholes.
+- Outcome of Task: xxx (Description; filled in at end of iteration)
