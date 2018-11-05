@@ -121,26 +121,26 @@
 
 ## Tasks:Andy Ta
 
-### Task 1: Pin Pothole on Map
+### Task 1: Get Longitude and Latitude of selected location
 
-- Description: Get Longitude and Latitude of selected location.
+- Description: Get the longitude and latitude of selected location.
 - How to Evaluate: Longitude and Latitude is added to the database.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 2: Rate Existing Potholes
+### Task 2: Increment entry in database
 
-- Description: Increment entry in database.
+- Description: Select and update rating entry in database.
 - How to Evaluate: If the user is able to select a pothole and change its rating from 1 to 10.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 3: View Fixed Pothole
+### Task 3: Query the database for fixed pothole 
 
-- Description: Query the database for fixed pothole location.
+- Description: Select fixed pothole ID in database
 - How to Evaluate: Website should only display fixed pothole when select view fixed pothole.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 4: Display Verified Potholes
+### Task 4: Query the database for verified pothole
 
-- Description: Query the database for verified potholes.
+- Description: Select verified pothole ID in database
 - How to Evaluate: When user select this mode, the website should only display verified potholes.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
