@@ -90,32 +90,26 @@
 
 ### Task 1: Embed Map into Home page
 
-- Description: Make the map a part of the home page
+- Description: Make the map a part of the home page.
 - How to Evaluate: If the map appears in the home page.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 ### Task 2: Retrieve location data from database
 
-- Description: Query the database for pothole locations.
+- Description: Query the database for pothole locations. This is needed to make pins display and to list locations.
 - How to Evaluate: If adding locations shows results in tasks 3 and 4 below.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 3: Pass location data to map for display
+### Task 3: Pass location data to map API for display
 
-- Description: Take the results of the database queries and display pins on the map.
+- Description: Use a map API with the retrieved location data to display pins on the map.
 - How to Evaluate: If the locations are visually pinned on the map.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 4: List location data below map
+### Task 4: Pass location data and other details to a list box
 
-- Description: Take the results of the database queries and list them in a box.
+- Description: List the retrieved location data in a box.
 - How to Evaluate: If the box containing locations appears and lists items.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 5: Zoom in
-
-- Description: The map needs to be zoomable in some fashion.
-- How to Evaluate: If the map is zoomable.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 ## Tasks:Andy Ta
