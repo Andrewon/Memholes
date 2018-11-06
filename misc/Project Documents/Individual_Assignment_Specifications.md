@@ -120,7 +120,7 @@
 - How to Evaluate: Longitude and Latitude is added to the database.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 2: update entry in database
+### Task 2: Update entry in database
 
 - Description: Select and update rating entry in database.
 - How to Evaluate: If the user is able to select a pothole and change its rating from 1 to 10.
