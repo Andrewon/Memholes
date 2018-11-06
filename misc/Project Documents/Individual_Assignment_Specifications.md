@@ -97,7 +97,7 @@
 ### Task 2: Retrieve location data from database
 
 - Description: Query the database for pothole locations. This is needed to make pins display and to list locations.
-- How to Evaluate: If adding locations shows results in tasks 3 and 4 below.
+- How to Evaluate: If database queries are used in the code and adding locations shows results in tasks 3 and 4 below.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 ### Task 3: Pass location data to map API for display
