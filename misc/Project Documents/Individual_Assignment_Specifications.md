@@ -26,7 +26,7 @@
 - How to Evaluate: If the user is able to change the verification status of a selected pothole from the website.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 3: Show Edit Name if User is Submitter
+### Task 3: Show Edit Name if User is Poster
 
 - Description: Only show edit name if current user is poster.
 - How to Evaluate: If user is the poster they can see edit name option. If user is not poster then edit name is missing.
@@ -50,7 +50,7 @@
 - How to Evaluate: If user is an administrator they can see combine option. If user is not an administrator then the combine option missing.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 7: Combine Duplicate Posts
+### Task 7: Combine Duplicate Potholes
 
 - Description: User is able to combine submissions.
 - How to Evaluate: If user is able to combine submissions from website.
