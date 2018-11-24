@@ -24,18 +24,18 @@ Lat:<input id="lat">Lon:<input id="lon">
 </script>
 <script>
 <% @pothole.each do |pothole| %>
-	var crater<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: true, clickable: true});
-	crater<%= pothole.id %>.bindPopup("<%= pothole.name %>");
-	crater<%= pothole.id %>.addTo(mymap);
+	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: true, clickable: true});
+	pothole<%= pothole.id %>.bindPopup("<%= pothole.name %>");
+	pothole<%= pothole.id %>.addTo(mymap);
 
-	crater<%= pothole.id %>.on('click', function(){
-		document.getElementById("lat").value = crater<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lon").value = crater<%= pothole.id %>.getLatLng().lng;
+	pothole<%= pothole.id %>.on('click', function(){
+		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
 	});
 
-	crater<%= pothole.id %>.on('dragend', function(){
-		document.getElementById("lat").value = crater<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lon").value = crater<%= pothole.id %>.getLatLng().lng;
+	pothole<%= pothole.id %>.on('dragend', function(){
+		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
 	});
 
 <% end %>
