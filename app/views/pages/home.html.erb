@@ -1,9 +1,77 @@
-<h1>Welcome!</h1>
+<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 
-<h2>Menu</h2>
+<h1>Memholes</h1>
 
-<ul>
+<div id="mapid" style="height: 60vh;"></div>
+<script>
 
-<li><%= link_to "About", about_path %></li>
+	var mymap = L.map('mapid').setView([35.1495, -89.97], 11);
 
-</ul>
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+
+</script>
+<script>
+<% @pothole.each do |pothole| %>
+	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true});
+	pothole<%= pothole.id %>.bindPopup("<%= pothole.name %>");
+	pothole<%= pothole.id %>.addTo(mymap);
+
+	pothole<%= pothole.id %>.on('click', function(){
+		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
+		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
+		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
+	});
+
+	pothole<%= pothole.id %>.on('dragend', function(){
+		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
+		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
+		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
+	});
+
+<% end %>
+</script>
+
+<div id="table-wrap">
+<div id="table-scroll" style="max-height: 30vh; overflow: auto;">
+<table class="table table-sm" style="table-layout: auto;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Lat</th>
+			<th scope="col">Lon</th>
+		</tr>
+	</thead>
+	<tbody style="">
+	<% @pothole.each do |pothole| %>
+		<tr>
+			<td><%= pothole.id %></td>
+			<td><%= pothole.name %></td>
+			<td><%= pothole.lat %></td>
+			<td><%= pothole.lon %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+</div>
+</div>
+<p>
+<p>
+<form>
+Latitude
+<input id="lat">
+<p>
+Longitude
+<input id="lon">
+</form>

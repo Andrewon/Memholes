@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: potholes
+#
+#  id         :integer          not null, primary key
+#  lat        :decimal(12, 10)
+#  lon        :decimal(13, 10)
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lat: 9.99
+  lon: 9.99
+
+two:
+  name: MyString
+  lat: 9.99
+  lon: 9.99
