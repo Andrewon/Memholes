@@ -4,10 +4,7 @@
 
 <h1>Memholes</h1>
 
-<div id="mapid" style="width: 600px; height: 400px;"></div>
-<form>
-Lat:<input id="lat">Lon:<input id="lon">
-</form>
+<div id="mapid" style="height: 60vh;"></div>
 <script>
 
 	var mymap = L.map('mapid').setView([35.1495, -90.0490], 13);
@@ -24,16 +21,20 @@ Lat:<input id="lat">Lon:<input id="lon">
 </script>
 <script>
 <% @pothole.each do |pothole| %>
-	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: true, clickable: true});
+	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true});
 	pothole<%= pothole.id %>.bindPopup("<%= pothole.name %>");
 	pothole<%= pothole.id %>.addTo(mymap);
 
 	pothole<%= pothole.id %>.on('click', function(){
+		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
+		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
 		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
 		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
 	});
 
 	pothole<%= pothole.id %>.on('dragend', function(){
+		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
+		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
 		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
 		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
 	});
@@ -41,7 +42,36 @@ Lat:<input id="lat">Lon:<input id="lon">
 <% end %>
 </script>
 
-<script>
-
-
-</script>
+<div id="table-wrap">
+<div id="table-scroll" style="max-height: 30vh; overflow: auto;">
+<table class="table table-sm" style="table-layout: auto;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Lat</th>
+			<th scope="col">Lon</th>
+		</tr>
+	</thead>
+	<tbody style="">
+	<% @pothole.each do |pothole| %>
+		<tr>
+			<td><%= pothole.id %></td>
+			<td><%= pothole.name %></td>
+			<td><%= pothole.lat %></td>
+			<td><%= pothole.lon %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+</div>
+</div>
+<p>
+<p>
+<form>
+Latitude
+<input id="lat">
+<p>
+Longitude
+<input id="lon">
+</form>
