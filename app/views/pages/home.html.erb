@@ -20,18 +20,28 @@ Lat:<input id="lat">Lon:<input id="lon">
 		id: 'mapbox.streets'
 	}).addTo(mymap);
 
-	var marker = new L.Marker([35.14968, -90.0490], {draggable: true, clickable: true});
-	marker.bindPopup("I'm a pothole!");
-	marker.addTo(mymap);
 
-	function testFunction() {
-		document.getElementById("lat").value = marker.getLatLng().lat;
-		document.getElementById("lon").value = marker.getLatLng().lng;
+</script>
+<script>
+<% @pothole.each do |pothole| %>
+	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: true, clickable: true});
+	pothole<%= pothole.id %>.bindPopup("<%= pothole.name %>");
+	pothole<%= pothole.id %>.addTo(mymap);
 
-	}
-
-	testFunction();
-	marker.on('dragend', function(){
-		testFunction();
+	pothole<%= pothole.id %>.on('click', function(){
+		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
 	});
+
+	pothole<%= pothole.id %>.on('dragend', function(){
+		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
+	});
+
+<% end %>
+</script>
+
+<script>
+
+
 </script>
