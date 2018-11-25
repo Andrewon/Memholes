@@ -1,0 +1,20 @@
+<main role="main" class="container">
+	<h1>Edit Name</h1>
+
+	<%= form_with model: @potholes, local: true do |form| %>
+
+	    <div class="field">
+	      <%= form.label @pothole.name %>
+	      <%= form.text_field @pothole.name, class: 'form-control' %>
+	    </div>
+
+	    <div class="actions">
+            <%= form.submit 'Edit Name', class:'btn btn-primary' %>
+        </div>
+	<% end %>
+
+	<p>
+    <%= link_to 'Back', home_path %>
+	</p>
+
+</main>
