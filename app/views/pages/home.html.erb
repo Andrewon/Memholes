@@ -51,8 +51,11 @@
 			.openOn(mymap);
 		document.getElementById("lat").value = e.latlng.lat;
 		document.getElementById("lon").value = e.latlng.lng;
+		
+		
 	}
 	mymap.on('click', onMapClick);
+		
 
 </script>
 
@@ -88,4 +91,8 @@ Latitude
 <p>
 Longitude
 <input id="lon">
+
+<%= link_to 'submit a pothole', new_pothole_path(:value => id="lat")%>
+
+
 </form>

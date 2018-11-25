@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@pothole = Pothole.all
+    @pothole = Pothole.all
   end
 
   def about
