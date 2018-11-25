@@ -6,9 +6,12 @@
 #  lat        :decimal(12, 10)
 #  lon        :decimal(13, 10)
 #  name       :string
+#  verified   :boolean
+#  user_id    :integer
 #  rating     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#
 #
 
 require 'test_helper'
