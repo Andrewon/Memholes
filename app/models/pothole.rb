@@ -6,6 +6,7 @@
 #  lat        :decimal(12, 10)
 #  lon        :decimal(13, 10)
 #  name       :string
+#  verified   :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
