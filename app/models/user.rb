@@ -13,6 +13,7 @@
 #  reset_password_token   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  pothole_id             :integer
 #
 # Indexes
 #
@@ -25,4 +26,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  has_many :pins,
+  class_name: 'Pothole',
+  inverse_of: :user,
+  dependent: :destroy
+
 end

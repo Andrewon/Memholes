@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_24_005032) do
+ActiveRecord::Schema.define(version: 2018_11_25_203820) do
 
   create_table "potholes", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_11_24_005032) do
     t.decimal "lon", precision: 13, scale: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_11_24_005032) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "admin"
+    t.integer "pothole_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
