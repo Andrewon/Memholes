@@ -1,20 +1,12 @@
-<main role="main" class="container">
-	<h1>Edit Name</h1>
+<%= provide(:title, 'Edit')%>
+<main role ='main' class='container'>
 
-	<%= form_with model: @potholes, local: true do |form| %>
+	<h1> Edit Pothole</h1>
 
-	    <div class="field">
-	      <%= form.label @pothole.name %>
-	      <%= form.text_field @pothole.name, class: 'form-control' %>
-	    </div>
-
-	    <div class="actions">
-            <%= form.submit 'Edit Name', class:'btn btn-primary' %>
-        </div>
-	<% end %>
+	<%= render 'form_name', pothole: @pothole%>
 
 	<p>
-    <%= link_to 'Back', home_path %>
+	<%= link_to 'Back', home_path %>
 	</p>
 
 </main>
