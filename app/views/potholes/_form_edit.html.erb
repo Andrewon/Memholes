@@ -15,6 +15,11 @@
    		<%= form.text_field :lon, class: 'form-control' %>
 	</div>
 
+	<div class = 'field'>
+    	<%= form.label :verified %>
+    	<%= form.select :verified,( ['false','true'])%>
+    </div>
+
     <div class = 'action'>
         <%= form.submit 'Edit pothole', class: 'btn btn-primary' %>
     </div>
