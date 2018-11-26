@@ -30,6 +30,7 @@ class User < ApplicationRecord
   has_many :pins,
   class_name: 'Pothole',
   inverse_of: :user,
-  dependent: :destroy
+  dependent: :destroy,
+  foreign_key: 'user_id'
 
 end
