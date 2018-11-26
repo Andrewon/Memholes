@@ -209,31 +209,3 @@ Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_
 </div>
 </div>
 <% end %>
-<p>
-<p>
-<form>
-Latitude
-<input id="latbox">
-<p>
-Longitude
-<input id="lonbox">
-</form>
-
-<%= form_with url: new_pothole_path do |form| %>
-<div class ="field">
-<%= form.label :name %>
-<%= form.text_field :name, class: 'form-control' %>
-</div>
-<div class ="field">
-   <%= form.label :latitude %>
-   <%= form.text_field :lat, class: 'form-control' %>
-</div>
-<div class ="field">
-   <%= form.label :longitude %>
-   <%= form.text_field :lon, class: 'form-control' %>
-</div>
-
-<div class="action">
-  <%= form.submit 'Submit pothole', class: 'btn btn-primary'%>
-</div>
-<% end %>
