@@ -107,7 +107,7 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 		</tr>
 	</thead>
 	<tbody style="">
-	<% @pothole.each do |pothole| %>
+	<% User.find_by(id: current_user.id).pins.each do |pothole| %>
 		<tr>
 			<td><%= pothole.id %></td>
 			<td><%= pothole.name %></td>
