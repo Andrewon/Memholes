@@ -5,6 +5,12 @@
         <%= form.text_field :name, class: 'form-control' %>
     </div>
 
+    <div class = 'field'>
+    	<%= form.label :verified %>
+    	<%= form.select :verified,( ['yes','no'])%>
+    </div>
+     
+
     <div class = 'action'>
         <%= form.submit 'Edit', class: 'btn btn-primary' %>
     </div>
