@@ -28,18 +28,32 @@
 	pothole<%= pothole.id %>.on('click', function(){
 		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
 		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
-		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
+		document.getElementById("latbox").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lonbox").value = pothole<%= pothole.id %>.getLatLng().lng;
 	});
 
 	pothole<%= pothole.id %>.on('dragend', function(){
-		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
-		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
-		document.getElementById("lat").value = pothole<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lon").value = pothole<%= pothole.id %>.getLatLng().lng;
+		document.getElementById("latbox").value = pothole<%= pothole.id %>.getLatLng().lat;
+		document.getElementById("lonbox").value = pothole<%= pothole.id %>.getLatLng().lng;
 	});
 
 <% end %>
+</script>
+<script>
+
+	var popup = L.popup();
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("(Latitude,Longitude) " + e.latlng.toString())
+			.openOn(mymap);
+		document.getElementById("lat").value = e.latlng.lat;
+		document.getElementById("lon").value = e.latlng.lng;
+		
+	}
+	mymap.on('click', onMapClick);
+		
+
 </script>
 
 <div id="table-wrap">
@@ -70,8 +84,27 @@
 <p>
 <form>
 Latitude
-<input id="lat">
+<input id="latbox">
 <p>
 Longitude
-<input id="lon">
+<input id="lonbox">
 </form>
+
+<%= form_with url: new_pothole_path do |form| %>
+<div class ="field">
+<%= form.label :name %>
+<%= form.text_field :name, class: 'form-control' %>
+</div>
+<div class ="field">
+   <%= form.label :latitude %>
+   <%= form.text_field :lat, class: 'form-control' %>
+</div>
+<div class ="field">
+   <%= form.label :longitude %>
+   <%= form.text_field :lon, class: 'form-control' %>
+</div>
+
+<div class="action">
+  <%= form.submit 'Submit pothole', class: 'btn btn-primary'%>
+</div>
+<% end %>

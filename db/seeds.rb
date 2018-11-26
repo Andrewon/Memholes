@@ -70,4 +70,3 @@ user_5.pins.build(:name => 'Test48', :lat => 35.122979990617424, :lon => -89.873
 user_5.pins.build(:name => 'Test49', :lat => 35.146862906756304, :lon => -89.89906311035158)
 user_5.pins.build(:name => 'Test50', :lat => 35.159091195022114, :lon => -89.99512910842896)
 user_5.save!
-

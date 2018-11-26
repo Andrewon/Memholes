@@ -1,4 +1,16 @@
-<% provide(:title, 'Show')%>
-<main role ='main' class='container'>
-	<%= @pothole.name%>
+<main role="main" class="container">
+    <p>
+        <b> ID: </b> <%= @pothole.id%>
+    </p>
+    <p>
+        <b> Name: </b> <%= @pothole.name%>
+    </p>
+    <p>
+        <b> Latitude: </b> <%= @pothole.lat%>
+    </p>
+    <p>
+        <b> Longitude: </b> <%= @pothole.lon%>
+    </p>
+
+    <%= link_to 'Home', home_path%>
 </main>
