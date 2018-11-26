@@ -12,4 +12,6 @@
 #
 
 class Pothole < ApplicationRecord
+
+   
 end

@@ -18,4 +18,21 @@ class PotholesController < ApplicationController
             render :new
         end
     end
+
+    def edit
+        @pothole = Pothole.find(params[:id]) 
+    end
+
+    def update
+        @pothole = Pothole.find(params[:id])
+        if @pothole.update(params.permit(:rating))
+            redirect_to pothole_url(@pothole), notice: 'Pothole was rated successfully.'
+        else 
+            flash.now[:alert] = 'Error! Unable to rate pothole.'
+            render :edit
+        end
+
+    end
+
 end
+

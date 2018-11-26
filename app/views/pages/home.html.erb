@@ -22,7 +22,19 @@
 <script>
 <% @pothole.each do |pothole| %>
 	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true});
-	pothole<%= pothole.id %>.bindPopup("<%= pothole.name %>");
+	pothole<%= pothole.id %>.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-10</b>'+'<br>'+' Current rating: '+'<%=pothole.rating%>'+
+	'<%= form_with url: edit_pothole_path(pothole.id) do |form| %>'
+
+	+'<div class ="field">'
+	+'<%= form.text_field :rating, class: 'form-control' %>'
+	+'</div>'
+
+	+'<div class="action">'
+	+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
+	+'</div>'
+	+'<% end %>'
+	);
+
 	pothole<%= pothole.id %>.addTo(mymap);
 
 	pothole<%= pothole.id %>.on('click', function(){
@@ -45,7 +57,24 @@
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
-			.setContent("(Latitude,Longitude) " + e.latlng.toString())
+			.setContent(
+			'<%= form_with url: new_pothole_path do |form| %>'
+			+'<div class ="field">'
+			+'<%= form.label :name %>'
+			+'<%= form.text_field :name, class: 'form-control' %>'
+			+'</div>'
+			+'<div class ="field">'
+			+'<%= form.label :latitude %>'
+			+'<%= form.text_field :lat, class: 'form-control' %>'
+			+'</div>'
+			+'<div class ="field">'
+			+'<%= form.label :longitude %>'
+			+'<%= form.text_field :lon, class: 'form-control' %>'
+			+'</div>'
+			+'<div class="action">'
+			+'<%= form.submit 'Submit pothole', class: 'btn btn-primary'%>'
+			+'</div>'
+			+'<% end %>')
 			.openOn(mymap);
 		document.getElementById("lat").value = e.latlng.lat;
 		document.getElementById("lon").value = e.latlng.lng;
@@ -80,31 +109,3 @@
 </table>
 </div>
 </div>
-<p>
-<p>
-<form>
-Latitude
-<input id="latbox">
-<p>
-Longitude
-<input id="lonbox">
-</form>
-
-<%= form_with url: new_pothole_path do |form| %>
-<div class ="field">
-<%= form.label :name %>
-<%= form.text_field :name, class: 'form-control' %>
-</div>
-<div class ="field">
-   <%= form.label :latitude %>
-   <%= form.text_field :lat, class: 'form-control' %>
-</div>
-<div class ="field">
-   <%= form.label :longitude %>
-   <%= form.text_field :lon, class: 'form-control' %>
-</div>
-
-<div class="action">
-  <%= form.submit 'Submit pothole', class: 'btn btn-primary'%>
-</div>
-<% end %>
