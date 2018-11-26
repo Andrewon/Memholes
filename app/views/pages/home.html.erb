@@ -123,7 +123,7 @@ Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_
 <script>
 <% @pothole.each do |pothole| %>
 	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true});
-	pothole<%= pothole.id %>.bindPopup("<%= pothole.name %>");
+	pothole<%= pothole.id %>.bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>");
 	pothole<%= pothole.id %>.addTo(mymap);
 
 	pothole<%= pothole.id %>.on('click', function(){
