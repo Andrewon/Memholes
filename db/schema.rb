@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2018_11_25_224156) do
     t.decimal "lon", precision: 13, scale: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.boolean "verified"
+    t.integer "user_id"
     t.integer "rating"
   end
 

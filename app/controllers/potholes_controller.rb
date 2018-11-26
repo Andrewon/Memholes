@@ -4,6 +4,10 @@ class PotholesController < ApplicationController
         @pothole = Pothole.find(params[:id])
     end
 
+    def edit_pothole
+        @pothole = Pothole.find(params[:id])
+    end
+
     def show
         @pothole = Pothole.find(params[:id])
     end
