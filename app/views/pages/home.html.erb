@@ -25,7 +25,7 @@ Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_
 </script>
 <% if user_signed_in? %>
 <script>
-<% @user.pins.each do |pothole| %>
+<% User.find_by(id: current_user.id).pins.each do |pothole| %>
 	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true});
 	pothole<%= pothole.id %>.bindPopup("<%= pothole.name %>");
 	pothole<%= pothole.id %>.addTo(mymap);
