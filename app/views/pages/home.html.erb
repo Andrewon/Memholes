@@ -23,7 +23,7 @@
 <% @pothole.each do |pothole| %>
 	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true});
 	pothole<%= pothole.id %>.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-10</b>'+'<br>'+' Current rating: '+'<%=pothole.rating%>'+
-	'<%= form_with url: edit_pothole_path(pothole.id) do |form| %>'
+	'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
 
 	+'<div class ="field">'
 	+'<%= form.text_field :rating, class: 'form-control' %>'
