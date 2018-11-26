@@ -4,7 +4,7 @@
 
 <h1>Memholes
 <span class='float-right'><% if user_signed_in? %>
-Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_user.id)%> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'%>
+Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'%>
 <% else %>
 <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-outline-primary'%>
 <% end %></span></h1>
