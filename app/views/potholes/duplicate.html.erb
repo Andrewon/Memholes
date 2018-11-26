@@ -1,0 +1,12 @@
+<%= provide(:title, 'Mark Duplicate')%>
+<main role ='main' class='container'>
+
+	<h1> Mark Duplicate</h1>
+
+	<%= render 'form_duplicate', pothole: @pothole%>
+
+	<p>
+	<%= link_to 'Back', home_path, data: { turbolinks: false } %>
+	</p>
+
+</main>

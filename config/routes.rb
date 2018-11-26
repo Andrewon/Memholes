@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'potholes/new', to: 'potholes#new', as: 'new_pothole'
   get 'potholes/:id/edit_pothole', to: 'potholes#edit_pothole', as: 'edit_pothole'
   get 'potholes/:id/edit_name', to: 'potholes#edit_name', as: 'edit_name' 
+  get 'potholes/:id/duplicate', to: 'potholes#duplicate', as: 'duplicate' 
   get 'potholes/:id', to: 'potholes#show', as: 'pothole'
   patch 'potholes/:id', to: 'potholes#update'
   put 'potholes/:id', to: 'potholes#update'
