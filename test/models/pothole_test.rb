@@ -6,7 +6,7 @@
 #  lat        :decimal(12, 10)
 #  lon        :decimal(13, 10)
 #  name       :string
-#  rating     :integer
+#  rating     :integer          default(0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
