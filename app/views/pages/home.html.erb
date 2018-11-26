@@ -4,7 +4,7 @@
 
 <h1>Memholes
 <span class='float-right'><% if user_signed_in? %>
-Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_user.id)%> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'%>
+Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'%>
 <% else %>
 <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-outline-primary'%>
 <% end %></span></h1>
@@ -104,17 +104,19 @@ Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_
 			<th scope="col">Lat</th>
 			<th scope="col">Lon</th>
 			<th scope="col">User</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody style="">
-	<% @pothole.each do |pothole| %>
+	<% User.find_by(id: current_user.id).pins.each do |pothole| %>
 		<tr>
 			<td><%= pothole.id %></td>
 			<td><%= pothole.name %></td>
 			<td><%= pothole.rating %></td>
 			<td><%= pothole.lat %></td>
 			<td><%= pothole.lon %></td>
-			<td><%= pothole.user.first_name%>
+			<td><%= pothole.user.first_name%></td>
+			<td><%= link_to 'View/Edit', pothole_path(pothole) %></td>
 		</tr>
 	<% end %>
 	</tbody>
@@ -154,6 +156,7 @@ Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_
 			<th scope="col">Lat</th>
 			<th scope="col">Lon</th>
 			<th scope="col">User</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody style="">
@@ -164,7 +167,8 @@ Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_
 			<td><%= pothole.rating %></td>
 			<td><%= pothole.lat %></td>
 			<td><%= pothole.lon %></td>
-			<td><%= pothole.user.first_name%>
+			<td><%= pothole.user.first_name%></td>
+			<td><%= link_to 'View', pothole_path(pothole) %></td>
 		</tr>
 	<% end %>
 	</tbody>
