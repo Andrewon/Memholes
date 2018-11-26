@@ -104,6 +104,7 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 			<th scope="col">Lat</th>
 			<th scope="col">Lon</th>
 			<th scope="col">User</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody style="">
@@ -114,7 +115,8 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 			<td><%= pothole.rating %></td>
 			<td><%= pothole.lat %></td>
 			<td><%= pothole.lon %></td>
-			<td><%= pothole.user.first_name%>
+			<td><%= pothole.user.first_name%></td>
+			<td><%= link_to 'View/Edit', pothole_path(pothole) %></td>
 		</tr>
 	<% end %>
 	</tbody>
@@ -154,6 +156,7 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 			<th scope="col">Lat</th>
 			<th scope="col">Lon</th>
 			<th scope="col">User</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody style="">
@@ -164,7 +167,8 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 			<td><%= pothole.rating %></td>
 			<td><%= pothole.lat %></td>
 			<td><%= pothole.lon %></td>
-			<td><%= pothole.user.first_name%>
+			<td><%= pothole.user.first_name%></td>
+			<td><%= link_to 'View', pothole_path(pothole) %></td>
 		</tr>
 	<% end %>
 	</tbody>
