@@ -12,6 +12,10 @@ class PotholesController < ApplicationController
         @pothole = Pothole.find(params[:id])
     end
 
+    def duplicate
+        @pothole = Pothole.find(params[:id])
+    end
+
     def new
         @pothole = Pothole.new
     end
