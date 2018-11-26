@@ -8,7 +8,6 @@
 #  lon        :decimal(13, 10)
 #  name       :string
 #  rating     :integer          default(0)
-#  rating     :integer
 #  verified   :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
