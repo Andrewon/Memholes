@@ -65,6 +65,9 @@ Welcome, <%= current_user.first_name %><%= link_to 'My Pins', user_path(current_
 			.setContent(
 			'<%= form_with url: new_pothole_path do |form| %>'
 			+'<div class ="field">'
+			+'<%= form.hidden_field :user_id, class: 'form-control', value: current_user.id, readonly: true %>'
+			+'</div>'
+			+'<div class ="field">'
 			+'<%= form.label :name %>'
 			+'<%= form.text_field :name, class: 'form-control' %>'
 			+'</div>'

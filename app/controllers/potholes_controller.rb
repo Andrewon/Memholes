@@ -17,7 +17,7 @@ class PotholesController < ApplicationController
     end
 
     def create
-        @pothole = Pothole.new(params.permit(:id, :name, :lat, :lon))
+        @pothole = Pothole.new(params.permit(:user_id, :name, :lat, :lon))
         if @pothole.save
             redirect_to pothole_url(@pothole), notice: 'Pothole was submitted successfully.'
         else
