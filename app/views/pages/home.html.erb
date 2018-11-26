@@ -42,18 +42,6 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 
 	pothole<%= pothole.id %>.addTo(mymap);
 
-	pothole<%= pothole.id %>.on('click', function(){
-		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
-		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
-		document.getElementById("latbox").value = pothole<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lonbox").value = pothole<%= pothole.id %>.getLatLng().lng;
-	});
-
-	pothole<%= pothole.id %>.on('dragend', function(){
-		document.getElementById("latbox").value = pothole<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lonbox").value = pothole<%= pothole.id %>.getLatLng().lng;
-	});
-
 <% end %>
 </script>
 <script>
@@ -129,18 +117,6 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 	var pothole<%= pothole.id %> = new L.Marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true});
 	pothole<%= pothole.id %>.bindPopup("ID: <%= pothole.id %><p>Name: <%= pothole.name %></p><p>Rating: <%= pothole.rating %></p>");
 	pothole<%= pothole.id %>.addTo(mymap);
-
-	pothole<%= pothole.id %>.on('click', function(){
-		//console.log("lat: " + pothole<%= pothole.id %>.getLatLng().lat);
-		//console.log("lon: " + pothole<%= pothole.id %>.getLatLng().lng);
-		document.getElementById("latbox").value = pothole<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lonbox").value = pothole<%= pothole.id %>.getLatLng().lng;
-	});
-
-	pothole<%= pothole.id %>.on('dragend', function(){
-		document.getElementById("latbox").value = pothole<%= pothole.id %>.getLatLng().lat;
-		document.getElementById("lonbox").value = pothole<%= pothole.id %>.getLatLng().lng;
-	});
 
 <% end %>
 </script>
