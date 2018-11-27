@@ -47,7 +47,7 @@ class PotholesController < ApplicationController
     
     def update
         @pothole = Pothole.find(params[:id])
-        if @pothole.update(params.require(:pothole).permit(:name, :lat, :lon))
+        if @pothole.update(params.require(:pothole).permit(:name, :lat, :lon, :verified, :duplicate))
             redirect_to home_url, notice: 'Pothole update successful.'
         else
             redirect_to home_url, notice: 'Pothole update failure.'
