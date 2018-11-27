@@ -20,6 +20,11 @@
     	<%= form.select :verified,( ['false','true'])%>
     </div>
 
+  <div class = 'field'>
+      <%= form.label :fixed %>
+      <%= form.select :fixed,( ['false','true'])%>
+    </div>
+
     <div class = 'action'>
         <%= form.submit 'Edit pothole', class: 'btn btn-primary' %>
     </div>
