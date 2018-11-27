@@ -41,25 +41,25 @@
   - Status: Not Started
 
 - Report Duplicates
-  - Description: User can combine duplicate pothole reports
+  - Description: Users can vote to combine duplicate pothole reports. After enough votes, reports are automatically combined (with admin approval).
   - Estimate: 1
   - Priority: 55
   - Status: Not Started
 
 - Attach Picture
-  - Description: User can attach picture of pothole from phone or computer
+  - Description: Users can attach picture of pothole from phone or computer
   - Estimate: 1
   - Priority: 35
   - Status: Not Started
 
 - Report Fixed
-  - Description: User can mark at reported pothole as fixed
+  - Description: Users can vote to mark potholes as fixed.
   - Estimate: 0.5
   - Priority: 40
   - Status: Not Started
 
 - Update Report
-  - Description: User can add information to existing reported pothole
+  - Description: User can add information to their own reported potholes.
   - Estimate: 0.5
   - Priority: 45
   - Status: Not Started
@@ -76,14 +76,8 @@
   - Priority: 20
   - Status: Not Started
 
-- Verify fixed pothole
-  - Description: Users can verify if potholes marked as fixed is correct.
-  - Estimate: 2
-  - Priority: 10
-  - Status: Not Started
-
 - Hide fixed pothole
-  - Description: Users can hide fixed potholes pin on the map.
+  - Description: Users can choose to hide fixed potholes from their map view.
   - Estimate: 4
   - Priority: 40
   - Status: Not Started
