@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  duplicate  :boolean          default(FALSE)
+#  fixed      :boolean          default(FALSE)
 #  lat        :decimal(12, 10)
 #  lon        :decimal(13, 10)
 #  name       :string

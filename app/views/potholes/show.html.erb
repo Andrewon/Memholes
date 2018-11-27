@@ -18,6 +18,9 @@
     <p>
         <b> Duplicate: </b> <%= @pothole.duplicate%>
     </p>
+    <p>
+        <b> Fixed: </b> <%= @pothole.fixed%>
+    </p>
 
     <% if user_signed_in? %>
     <%= link_to 'Mark Duplicate', duplicate_path %> |
