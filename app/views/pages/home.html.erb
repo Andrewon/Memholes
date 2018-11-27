@@ -44,6 +44,19 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 	+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
 	+'</div>'
 	+'<% end %>'//form end
+	).addTo(fixedP);
+	<%end%>
+<%if pothole.verified==true%>  // check to see if pot hole is verified
+	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true})
+	.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-10</b>'+'<br>'+' Current rating: '+'<%=pothole.rating%>'+
+	'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
+	+'<div class ="field">'
+	+'<%= form.text_field :rating, class: 'form-control' %>'
+	+'</div>'
+	+'<div class="action">'
+	+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
+	+'</div>'
+	+'<% end %>'//form end
 	).addTo(thatVerified);
 <%else%>
 L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true})
@@ -141,13 +154,15 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 <script> //display all pin for non-member
 
 <% @pothole.each do |pothole| %>
-<%if pothole.verified==true%>  // check to see if pot hole is verified
-	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(thatVerified);
-<% elsif pothole.fixed==true %>
-L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(fixedP);
-<%else%>
-	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(notVerified);
-<%end%>
+	<%if pothole.fixed == true %>
+	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(fixedP);
+	<%end%>
+	<% if pothole.verified == true %>  // check to see if pot hole is verified
+		L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(thatVerified);
+	<%else%>
+		L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(notVerified);
+	<%end%>
+
 <%end%>
 
 var overlays = {  // add filter to map

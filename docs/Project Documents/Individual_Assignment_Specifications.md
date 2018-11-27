@@ -16,25 +16,25 @@
 
 ### Task 1: Update Pothole
 
-- Description: Make webpage to update reported pothole information. 
+- Description: Make webpage to update reported pothole information.
 - How to Evaluate: Able to edit pothole information from website and have database updated.
 - Outcome of Task: User is able to edit pothole information.
 
 ### Task 2: Name Pothole
 
-- Description: Make webpage to update reported pothole name. 
+- Description: Make webpage to update reported pothole name.
 - How to Evaluate: Able to edit pothole name from website and have database updated.
 - Outcome of Task: User is able to edit pothole name.
 
 ### Task 3: Verify Pothole
 
-- Description: Update reported pothole as verified. 
+- Description: Update reported pothole as verified.
 - How to Evaluate: Able to mark pothole as verified from website and have database updated.
 - Outcome of Task: User is able to mark pothole as verified.
 
 ### Task 4: Duplicate Pothole Report
 
-- Description: Update reported pothole as duplicate for later merger. 
+- Description: Update reported pothole as duplicate for later merger.
 - How to Evaluate: Able to mark pothole as duplicate from website and have database updated.
 - Outcome of Task: User is able to mark pothole as duplicate.
 
@@ -70,25 +70,25 @@
 
 - Description: Get the longitude and latitude of selected location.
 - How to Evaluate: Longitude and Latitude is added to the database.
-- Outcome of Task: User was able to click on any location on the map and have the latitude and longitude pre-populated into submit form.
+- Outcome of Task: User is able to click on any location on the map and have the latitude and longitude pre-populated into submit form.
 
 ### Task 2: Update entry in database
 
 - Description: Select and update rating entry in database.
 - How to Evaluate: If the user is able to select a pothole and change its rating from 1 to 10.
-- Outcome of Task: User was able to change the rating for potholes.
+- Outcome of Task: User is able to change the rating for potholes.
 
 ### Task 3: Query the database for fixed pothole
 
 - Description: Select fixed pothole ID in database
 - How to Evaluate: Website should only display fixed pothole when select view fixed pothole.
-- Outcome of Task: User was able to select the option for fixed pothole but website wasn't displaying the correct pothole.
+- Outcome of Task: User is able to select the option for fixed pothole and website is displaying only fixed pothole.
 
 ### Task 4: Query the database for verified pothole
 
 - Description: Select verified pothole ID in database
 - How to Evaluate: When user select this mode, the website should only display verified potholes.
-- Outcome of Task: User was able to select option for verified pothole and website was displaying only verified potholes does this look right?
+- Outcome of Task: User is able to select option for verified pothole and website is displaying only verified pothole.
 
 ## Tasks: Danny Chamberlin
 
