@@ -10,7 +10,7 @@
 - Video Demo Creators:
   - xxx, 999 (Team Member Name, Number of Points; filled in at end of iteration)
   - xxx, 999 (Team Member Name, Number of Points; filled in at end of iteration)
-- Demo-Booth Operator: xxx (Team Member Name; filled in at end of iteration)
+- Demo-Booth Operator: Andy Ta
 
 ## Tasks:David Reddick
 
@@ -118,25 +118,25 @@
 
 - Description: Get the longitude and latitude of selected location.
 - How to Evaluate: Longitude and Latitude is added to the database.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to click on any location on the map and have the latitude and longitude pre-populated into submit form.
 
 ### Task 2: Update entry in database
 
 - Description: Select and update rating entry in database.
 - How to Evaluate: If the user is able to select a pothole and change its rating from 1 to 10.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to change the rating for potholes.
 
 ### Task 3: Query the database for fixed pothole
 
 - Description: Select fixed pothole ID in database
 - How to Evaluate: Website should only display fixed pothole when select view fixed pothole.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to select the option for fixed pothole but website wasn't displaying the correct pothole.
 
 ### Task 4: Query the database for verified pothole
 
 - Description: Select verified pothole ID in database
 - How to Evaluate: When user select this mode, the website should only display verified potholes.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to select option for verified pothole and website was displaying only verified potholes
 
 ## Tasks: Danny Chamberlin
 
