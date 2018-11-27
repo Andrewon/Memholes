@@ -88,8 +88,7 @@
 
 - Description: Select verified pothole ID in database
 - How to Evaluate: When user select this mode, the website should only display verified potholes.
-- Outcome of Task: User was able to select option for verified pothole and website was displaying only verified potholes
-does this look right?
+- Outcome of Task: User was able to select option for verified pothole and website was displaying only verified potholes does this look right?
 
 ## Tasks: Danny Chamberlin
 
