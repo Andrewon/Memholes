@@ -8,83 +8,35 @@
 - Project Coordinator: Danny Chamberlin
 - Quality Assurance Czar: Thomas Goodman
 - Video Demo Creators:
-  - xxx, 999 (Team Member Name, Number of Points; filled in at end of iteration)
-  - xxx, 999 (Team Member Name, Number of Points; filled in at end of iteration)
-- Demo-Booth Operator: xxx (Team Member Name; filled in at end of iteration)
+  - Andy Ta, 999
+  - Danny Chamberlin, 999
+- Demo-Booth Operator: Andy Ta
 
 ## Tasks:David Reddick
 
-### Task 1: Show Verify Column if Admin Bit Set
+### Task 1: Update Pothole
 
-- Description: Only show verify column if current user is an administrator.
-- How to Evaluate: If user is an administrator they can see verify column. If user is not an administrator then the verify column missing.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Description: Make webpage to update reported pothole information. 
+- How to Evaluate: Able to edit pothole information from website and have database updated.
+- Outcome of Task: User is able to edit pothole information.
 
-### Task 2: Update Verify Column for Each Checked in Table
+### Task 2: Name Pothole
 
-- Description: User is able to change the verification status of a selected pothole.
-- How to Evaluate: If the user is able to change the verification status of a selected pothole from the website.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Description: Make webpage to update reported pothole name. 
+- How to Evaluate: Able to edit pothole name from website and have database updated.
+- Outcome of Task: User is able to edit pothole name.
 
-### Task 3: Show Edit Name if User is Poster
+### Task 3: Verify Pothole
 
-- Description: Only show edit name if current user is poster.
-- How to Evaluate: If user is the poster they can see edit name option. If user is not poster then edit name is missing.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Description: Update reported pothole as verified. 
+- How to Evaluate: Able to mark pothole as verified from website and have database updated.
+- Outcome of Task: User is able to mark pothole as verified.
 
-### Task 4: Update Name Column of Selected Pothole
+### Task 4: Duplicate Pothole Report
 
-- Description: User is able to change the pothole name of a selected pothole.
-- How to Evaluate: If the user is able to change the name of a selected pothole from the website.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 5: Report Duplicate Potholes
-
-- Description: User can submit a report that two potholes are the same from the list view.
-- How to Evaluate: If a user can report duplicate potholes from the website.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 6: Show Combine Option if Admin Bit Set
-
-- Description: Only show combine option if current user is an administrator.
-- How to Evaluate: If user is an administrator they can see combine option. If user is not an administrator then the combine option missing.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 7: Combine Duplicate Potholes
-
-- Description: User is able to combine submissions.
-- How to Evaluate: If user is able to combine submissions from website.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 8: Report Fixed Potholes
-
-- Description: User can submit a report that a pothole is fixed.
-- How to Evaluate: If a user can report a fixed potholes from the website.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 9: Show Fixed Option if Admin Bit Set
-
-- Description: Only show fixed option if current user is an administrator.
-- How to Evaluate: If user is an administrator they can see fixed option. If user is not an administrator then the fixed option missing.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 10: Update Fixed Column for Each Checked in Table
-
-- Description: User is able to change the fixed status of a selected pothole.
-- How to Evaluate: If the user is able to change the fixed status of a selected pothole from the website.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 11: Show Edit Pothole if Admin Bit Set
-
-- Description: Only show edit pothole if current user is administrator.
-- How to Evaluate: If user is an administrator they can see edit pothole option. If user is not an administrator then the edit pothole option is missing.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
-
-### Task 12: Update Entry of Selected Pothole
-
-- Description: User is able to change the pothole information.
-- How to Evaluate: If the user is able to edit a selected pothole from the website.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Description: Update reported pothole as duplicate for later merger. 
+- How to Evaluate: Able to mark pothole as duplicate from website and have database updated.
+- Outcome of Task: User is able to mark pothole as duplicate.
 
 ## Tasks: "Ty" Thomas Goodman
 
@@ -118,25 +70,25 @@
 
 - Description: Get the longitude and latitude of selected location.
 - How to Evaluate: Longitude and Latitude is added to the database.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to click on any location on the map and have the latitude and longitude pre-populated into submit form.
 
 ### Task 2: Update entry in database
 
 - Description: Select and update rating entry in database.
 - How to Evaluate: If the user is able to select a pothole and change its rating from 1 to 10.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to change the rating for potholes.
 
 ### Task 3: Query the database for fixed pothole
 
 - Description: Select fixed pothole ID in database
 - How to Evaluate: Website should only display fixed pothole when select view fixed pothole.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to select the option for fixed pothole but website wasn't displaying the correct pothole.
 
 ### Task 4: Query the database for verified pothole
 
 - Description: Select verified pothole ID in database
 - How to Evaluate: When user select this mode, the website should only display verified potholes.
-- Outcome of Task: xxx (Description; filled in at end of iteration)
+- Outcome of Task: User was able to select option for verified pothole and website was displaying only verified potholes does this look right?
 
 ## Tasks: Danny Chamberlin
 
