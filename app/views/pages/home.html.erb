@@ -12,6 +12,7 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 <script> // display map
 	var thatVerified = new L.LayerGroup(); //layer for verified potholes
 	var notVerified = new L.LayerGroup();  //layer for unverified potholes
+	var fixedP = new L.LayerGroup();
 
 	var mymap = L.map('map',{
     center: [35.1495, -89.97],
@@ -61,7 +62,8 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 
 	var overlays = {
 		"Verified Potholes": thatVerified,
-		"Not Verified": notVerified
+		"Not Verified": notVerified,
+		"Fixed": fixedP
 		};
 
 	L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
@@ -141,6 +143,8 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 <% @pothole.each do |pothole| %>
 <%if pothole.verified==true%>  // check to see if pot hole is verified
 	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(thatVerified);
+<% elsif pothole.fixed==true %>
+L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(fixedP);
 <%else%>
 	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(notVerified);
 <%end%>
@@ -148,7 +152,8 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 
 var overlays = {  // add filter to map
 	"Verified Potholes": thatVerified,
-	"Not Verified": notVerified
+	"Not Verified": notVerified,
+	"Fixed": fixedP
 	};
 
 L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
