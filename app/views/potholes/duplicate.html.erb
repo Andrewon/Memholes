@@ -1,9 +1,9 @@
-<%= provide(:title, 'Edit Name')%>
+<%= provide(:title, 'Mark Duplicate')%>
 <main role ='main' class='container'>
 
-	<h1> Edit Pothole</h1>
+	<h1> Mark Duplicate</h1>
 
-	<%= render 'form_edit', pothole: @pothole%>
+	<%= render 'form_duplicate', pothole: @pothole%>
 
 	<p>
 	<%= link_to 'Back', home_path, data: { turbolinks: false } %>

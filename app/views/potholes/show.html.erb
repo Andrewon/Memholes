@@ -1,9 +1,10 @@
 <main role="main" class="container">
-    <p>
-        <b> ID: </b> <%= @pothole.id%>
-    </p>
+   
     <p>
         <b> Name: </b> <%= @pothole.name%>
+    </p>
+     <p>
+        <b> Rating: </b> <%= @pothole.rating%>
     </p>
     <p>
         <b> Latitude: </b> <%= @pothole.lat%>
@@ -17,10 +18,14 @@
     <p>
         <b> Duplicate: </b> <%= @pothole.duplicate%>
     </p>
+    <p>
+        <b> Fixed: </b> <%= @pothole.fixed%>
+    </p>
 
-
-
+    <% if user_signed_in? %>
+    <%= link_to 'Mark Duplicate', duplicate_path %> |
     <%= link_to 'Edit Pothole', edit_pothole_path %> |
     <%= link_to 'Edit Name', edit_name_path %> |
-    <%= link_to 'Home', home_path%>
+    <% end %>
+    <%= link_to 'Home', home_path, data: { turbolinks: false } %>
 </main>

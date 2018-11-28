@@ -1,7 +1,7 @@
 # Individual Assignment Specifications
 
 - Team: Memholes
-- Iteration: Milestone 1
+- Iteration: Milestone 2
 
 ## Special Roles
 
@@ -14,29 +14,37 @@
 
 ## Tasks:David Reddick
 
-### Task 1: Update Pothole
+### Task 1: Send Email to City of Memphis
 
-- Description: Make webpage to update reported pothole information.
-- How to Evaluate: Able to edit pothole information from website and have database updated.
-- Outcome of Task: User is able to edit pothole information.
+- Description: When a pothole is marked verified send a scripted email with relevant information.
+- How to Evaluate: Does an automated email get sent when requirements are met?
+- Outcome of Task: 
+- Issue:
+- Pull Request: 
 
-### Task 2: Name Pothole
+### Task 2: Send Email to Submitter
 
-- Description: Make webpage to update reported pothole name.
-- How to Evaluate: Able to edit pothole name from website and have database updated.
-- Outcome of Task: User is able to edit pothole name.
+- Description: When a pothole is marked as fixed, send a scripted email to pothole submitter.
+- How to Evaluate: Does an automated email get sent when requirements are met?
+- Outcome of Task: 
+- Issue:
+- Pull Request: 
 
-### Task 3: Verify Pothole
+### Task 3: Fixed Pothole
 
-- Description: Update reported pothole as verified.
-- How to Evaluate: Able to mark pothole as verified from website and have database updated.
-- Outcome of Task: User is able to mark pothole as verified.
+- Description: Update reported pothole as fixed when marked.
+- How to Evaluate: Able to mark pothole as fixed from website and have database updated.
+- Outcome of Task:
+- Issue:
+- Pull Request: 
 
-### Task 4: Duplicate Pothole Report
+### Task 4: Mark Pothole as Verified if Admin
 
-- Description: Update reported pothole as duplicate for later merger.
-- How to Evaluate: Able to mark pothole as duplicate from website and have database updated.
-- Outcome of Task: User is able to mark pothole as duplicate.
+- Description: Only allow admin to mark a pothole as verified.
+- How to Evaluate: Able to mark pothole as verified from website and have database updated but only if user is logged in as an admin.
+- Outcome of Task: 
+- Issue:
+- Pull Request: 
 
 ## Tasks: "Ty" Thomas Goodman
 
