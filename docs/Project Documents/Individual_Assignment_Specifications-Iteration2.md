@@ -64,7 +64,7 @@
 - Issue:
 - Pull Request: 
 
-### Task 3: Diaplay Picture
+### Task 3: Display Picture
 
 - Description: All users can view pictures attached to pothole reports by clicking on the pins or visiting the view pages for the potholes. This will require modifications to the popup and view page code.
 - How to Evaluate: If a picture (if attached) is displayed when users view pothole pins/reports.
