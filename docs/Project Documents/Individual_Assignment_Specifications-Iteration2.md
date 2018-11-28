@@ -98,58 +98,36 @@
 - How to Evaluate: When user select this mode, the website should only display verified potholes.
 - Outcome of Task: User is able to select option for verified pothole and website is displaying only verified pothole.
 
-## Tasks: Danny Chamberlin
+## Tasks:Danny Chamberlin
 
-### Task 1: Create Login Page
+### Task 1: Style site with Tabbed navigation
 
-- Description: Create View to allow user to log into application
-- How to Evaluate: Login.html page is present.
-- Outcome of Task: User can log in with a login page link.
+- Description: Add tabbed-look navigation as in docs/Site Documents/UI-Sketch/Home_Logged_In.PNG
+- How to Evaluate: Does each page have the same tabs at the top and is the current page the "active" tab?
+- Outcome of Task: 
+- Issue:
+- Pull Request: 
 
-### Task 2: Wire login page to database
+### Task 2: Get latitude/longitude from current location
 
-- Description: Login page will be wired to the database to allow login to site
-- How to Evaluate: User logs in with previously established username and password and is successfully redirected to the home page with username showing on page.
-- Outcome of Task: Users actually can use the log in page and get to their account.
+- Description: When creating a new pothole, ask to use current location and then display current coordinates
+- How to Evaluate: Does the current latitude and longitude display in pop-up?
+- Outcome of Task: 
+- Issue:
+- Pull Request: 
 
-### Task 3: Create 'Create Account' Page
+### Task 3: Identify Duplicate Potholes
 
-- Description: Create view to allow user to create a persistent account on site.
-- How to Evaluate: AddUser.html page is present
-- Outcome of Task: User can create an account.
+- Description: When creating a new pothole, database is checked to see if this pothole is reported based on Latitude and longitude
+- How to Evaluate: Create a pothole where a pothole already exists and see if the application reports the new submission as duplicate
+- Outcome of Task:
+- Issue:
+- Pull Request: 
 
-### Task 4: Wire 'Create Account' page to database
+### Task 4: Reorganize homepage to match layout in Home_Logged_In.PNG and Home_Not_Logged_In.PNG
 
-- Description: 'Create Account' page will be wired to the database to allow creation of user profile for site
-- How to Evaluate: User fills out form with required information and is redirected to home page with "account created successfully" notification at top of page.
-- Outcome of Task: Users can create accounts.
-
-### Task 5: Create query object for user's submission list
-
-- Description: Create a query object in Pothole Info model to get list of potholes that belongs to currently logged-in user's user_id.
-- How to Evaluate: PotHole Info model has above described query object.
-- Outcome of Task: Users can see their submissions.
-
-### Task 6: Add link to user's potholes on profile page
-
-- Description: Add a link to the user's profile page that will redirect to home page and show list of current user's potholes
-- How to Evaluate: User clicks on link and list of potholes owned by that user_id is displayed on home page.
-- Outcome of Task: User can view their potholes' show/edit pages.
-
-### Task 7: Pass Location data to map to display pins
-
-- Description: Pass location data from database to the map object
-- How to Evaluate: This and next task will be evaluated at the same time
-- Outcome of Task: User's pins appear on the map.
-
-### Task 8: Display pothole data below map
-
-- Description: Show pothole information in table below map
-- How to Evaluate: User's list of potholes will be shown below map, while pins will be shown on map that correspond to each pothole in the table.
-- Outcome of Task: User's pothole data appears below the map.
-
-### Task 9: Add Bootstrap to project
-
-- Description: Add Bootstrap styling to application via process described in Ruby Bootcamp.
-- How to Evaluate: Page CSS will have Bootstrap naming conventions, bootstrap gem will be present in project.
-- Outcome of Task: Site has bootstrap styling.
+- Description: Re-style the homepage to match the layout in the UI Sketches
+- How to Evaluate: Does the homepage look similar to the Home_Logged_In.PNG and Home_Not_Logged_In.PNG sketches?
+- Outcome of Task: 
+- Issue:
+- Pull Request:
