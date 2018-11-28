@@ -48,55 +48,55 @@
 
 ## Tasks: "Ty" Thomas Goodman
 
-### Task 1: Embed Map into Home page
+### Task 1: Theme selection
 
-- Description: Make the map a part of the home page.
-- How to Evaluate: If the map appears in the home page.
-- Outcome of Task: Map appears on the home page.
+- Description: Allow users to choose between a light and dark theme, if logged in. A variable will be stored in the database to make the user's preference consistent
+- How to Evaluate: User can select themes. Also, the theme setting must be persistent.
+- Outcome of Task: 
+- Issue:
+- Pull Request: 
 
-### Task 2: Retrieve location data from database
+### Task 2: Attach Picture
 
-- Description: Query the database for pothole locations. This is needed to make pins display and to list locations.
-- How to Evaluate: If database queries are used in the code and adding locations shows results in tasks 3 and 4 below.
-- Outcome of Task: Database queries function and the location data reaches the map and list box.
+- Description: Users can upload pictures to their own pothole reports, so others can see what the pothole looks like. This will require integrating a file uploader, like CarrierWave. The filename will be stored in a field in the database.
+- How to Evaluate: User can upload pictures on the editor for their pothole reports.
+- Outcome of Task: 
+- Issue:
+- Pull Request: 
 
-### Task 3: Pass location data to map API for display
+### Task 3: Diaplay Picture
 
-- Description: Use a map API with the retrieved location data to display pins on the map.
-- How to Evaluate: If the locations are visually pinned on the map.
-- Outcome of Task: The locations are displayed as pins on the map.
-
-### Task 4: Pass location data and other details to a list box
-
-- Description: List the retrieved location data in a box.
-- How to Evaluate: If the box containing locations appears and lists items.
-- Outcome of Task: The list box displays the pothole locations.
+- Description: All users can view pictures attached to pothole reports by clicking on the pins or visiting the view pages for the potholes. This will require modifications to the popup and view page code.
+- How to Evaluate: If a picture (if attached) is displayed when users view pothole pins/reports.
+- Outcome of Task:
+- Issue:
+- Pull Request: 
 
 ## Tasks:Andy Ta
 
-### Task 1: Get Longitude and Latitude of selected location
+### Task 1: Custom pothole pin
 
-- Description: Get the longitude and latitude of selected location.
-- How to Evaluate: Longitude and Latitude is added to the database.
-- Outcome of Task: User is able to click on any location on the map and have the latitude and longitude pre-populated into submit form.
+- Description: Change the default look of the pothole pin.
+- How to Evaluate: Pin should look different from the current blue pin.
+- Outcome of Task:
+- Issues:
+- Pull request:
 
-### Task 2: Update entry in database
+### Task 2: Option to see potholes submitted by all-user in user's homepage
 
-- Description: Select and update rating entry in database.
-- How to Evaluate: If the user is able to select a pothole and change its rating from 1 to 10.
-- Outcome of Task: User is able to change the rating for potholes.
+- Description: Query data for all potholes and display it on the map.
+- How to Evaluate: If the user is able to select the option to view all and the map display all potholes.
+- Outcome of Task:
+- Issues:
+- Pull request:
 
-### Task 3: Query the database for fixed pothole
+### Task 3: Add alert to the website
 
-- Description: Select fixed pothole ID in database
-- How to Evaluate: Website should only display fixed pothole when select view fixed pothole.
-- Outcome of Task: User is able to select the option for fixed pothole and website is displaying only fixed pothole.
-
-### Task 4: Query the database for verified pothole
-
-- Description: Select verified pothole ID in database
-- How to Evaluate: When user select this mode, the website should only display verified potholes.
-- Outcome of Task: User is able to select option for verified pothole and website is displaying only verified pothole.
+- Description: Add an alert to submit, edit, sign-up and sign-in function...
+- How to Evaluate: Website should display an alert after user submit something.
+- Outcome of Task:
+- Issues:
+- Pull request:
 
 ## Tasks:Danny Chamberlin
 
