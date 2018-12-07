@@ -150,6 +150,13 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 </table>
 </div>
 </div>
+
+
+<div class = 'container'>
+<div id="newform">
+<%= render '/potholes/form_new' %>
+</div>
+</div>
 <% else %>
 
 <script> //display all pin for non-member
@@ -204,6 +211,11 @@ L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
 	<% end %>
 	</tbody>
 </table>
+</div>
+</div>
+<div class = 'container'>
+<div id="newform">
+<%= render "/potholes/newuser" %>
 </div>
 </div>
 <% end %>

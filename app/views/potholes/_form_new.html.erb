@@ -1,0 +1,26 @@
+<%= form_with model: @Pothole, local:true do |form| %>
+
+<h1> Submit a pothole </h1>
+
+<div class ="field">
+  <%= form.label :id %>
+  <%= form.text_field :id, class: 'form-control' %>
+</div>
+
+<div class ="field">
+   <%= form.label :name %>
+   <%= form.text_field :name, class: 'form-control' %>
+</div>
+<div class ="field">
+   <%= form.label :latitude %>
+   <%= form.text_field :lat,:value => params[:value], class: 'form-control' %>
+</div>
+<div class ="field">
+   <%= form.label :longitude %>
+   <%= form.text_field :lon,:value => params[:lon], class: 'form-control' %>
+</div>
+
+<div class="action">
+  <%= form.submit 'Submit pothole', class: 'btn btn-primary'%>
+  </div>
+<% end %>
