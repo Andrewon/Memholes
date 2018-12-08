@@ -53,4 +53,6 @@ class PotholesController < ApplicationController
             redirect_to home_url, notice: 'Pothole update failure.'
         end
     end
+
+   
 end
