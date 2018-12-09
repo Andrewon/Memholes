@@ -8,6 +8,7 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 <% else %>
 <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-outline-primary'%>
 <% end %></span></h1>
+<div class='container'>
 <div id="map" style="height: 60vh;"></div>
 <script> // display map
 	var thatVerified = new L.LayerGroup(); //layer for verified potholes
@@ -120,7 +121,7 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 </script>
 
 <div id="table-wrap">
-<div id="table-scroll" style="max-height: 30vh; overflow: auto;">
+<div id="table-scroll" style="max-height: 60vh; overflow: auto;">
 <table class="table table-sm" style="table-layout: auto;">
 	<thead>
 		<tr>
@@ -147,6 +148,13 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 	<% end %>
 	</tbody>
 </table>
+</div>
+</div>
+
+
+<div class = 'container'>
+<div id="newform">
+<%= render '/potholes/form_new' %>
 </div>
 </div>
 <% else %>
@@ -176,7 +184,7 @@ L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
 </script>
 
 <div id="table-wrap">
-<div id="table-scroll" style="max-height: 30vh; overflow: auto;">
+<div id="table-scroll" style="max-height: 60vh; overflow: auto;">
 <table class="table table-sm" style="table-layout: auto;">
 	<thead>
 		<tr>
@@ -205,4 +213,10 @@ L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
 </table>
 </div>
 </div>
+<div class = 'container'>
+<div id="newform">
+<%= render "/potholes/newuser" %>
+</div>
+</div>
 <% end %>
+</div>
