@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   root to: 'pages#home'
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
 
   get 'home', to: 'pages#home', as: 'home'
