@@ -2,14 +2,9 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 
-<h1>Memholes
-<span class='float-right'><% if user_signed_in? %>
-Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'%>
-<% else %>
-<%= link_to 'Sign In', new_user_session_path, class: 'btn btn-outline-primary'%>
-<% end %></span></h1>
+
 <div class='container'>
-<div id="map" style="height: 60vh;"></div>
+<div id="map" style="height: 80vh;"></div>
 
 <%if user_signed_in?%>
 	<script> //layer for all verified potholes in signed-in homepage.
@@ -164,7 +159,7 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 	</script>
 
 <div id="table-wrap">
-<div id="table-scroll" style="max-height: 60vh; overflow: auto;">
+<div id="table-scroll" style="max-height: 80vh; overflow: auto;">
 <table class="table table-sm" style="table-layout: auto;">
 	<thead>
 		<tr>
@@ -193,13 +188,11 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 </table>
 </div>
 </div>
+<div style='float:left;'>
+<h4>Click anywhere on the map to report a pothole.</h4>
+</div>
 
 
-<div class = 'container'>
-<div id="newform">
-<%= render '/potholes/form_new' %>
-</div>
-</div>
 
 <% else %>
 	<script> //display all pin for non-member
@@ -232,40 +225,36 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 
 
 
-	<div id="table-wrap">
-		<div id="table-scroll" style="max-height: 60vh; overflow: auto;">
-			<table class="table table-sm" style="table-layout: auto;">
-				<thead>
-					<tr>
-						<th scope="col">ID</th>
-						<th scope="col">Name</th>
-						<th scope="col">Rating</th>
-						<th scope="col">Lat</th>
-						<th scope="col">Lon</th>
-						<th scope="col">User</th>
-						<th scope="col"></th>
-					</tr>
-				</thead>
-				<tbody style="">
-				<% @pothole.each do |pothole| %>
-					<tr>
-						<td><%= pothole.id %></td>
-						<td><%= pothole.name %></td>
-						<td><%= pothole.rating %></td>
-						<td><%= pothole.lat %></td>
-						<td><%= pothole.lon %></td>
-						<td><%= pothole.user.first_name%></td>
-						<td><%= link_to 'View', pothole_path(pothole) %></td>
-					</tr>
-				<% end %>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class = 'container'>
-		<div id="newform">
-		<%= render "/potholes/newuser" %>
-		</div>
-	</div>
+<div id="table-wrap">
+<div id="table-scroll" style="max-height: 80vh; overflow: auto;">
+<table class="table table-sm" style="table-layout: auto;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Rating</th>
+			<th scope="col">Lat</th>
+			<th scope="col">Lon</th>
+			<th scope="col">User</th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody style="">
+	<% @pothole.each do |pothole| %>
+		<tr>
+			<td><%= pothole.id %></td>
+			<td><%= pothole.name %></td>
+			<td><%= pothole.rating %></td>
+			<td><%= pothole.lat %></td>
+			<td><%= pothole.lon %></td>
+			<td><%= pothole.user.first_name%></td>
+			<td><%= link_to 'View', pothole_path(pothole) %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+</div>
+</div>
+<h4>Start reporting potholes today: <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-primary', style: "margin-top:5px;padding-top: 1px;padding-bottom: 4px;"%></h4>
 <% end %>
 </div>
