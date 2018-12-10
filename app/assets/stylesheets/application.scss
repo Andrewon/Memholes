@@ -15,9 +15,9 @@
 @import "bootstrap";
 
 body {
-    padding-top: 5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-top: 4rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
   }
   
 div.field{
@@ -25,6 +25,13 @@ div.field{
     padding-bottom: 0.5rem;
 }
 
+div.container{
+    max-width: 1920px;
+    margin-left: 0px;
+    margin-right:0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
 div.actions{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -38,12 +45,12 @@ div.invalid-feedback{
 }
 
 #map{
-    width: 50%;
+    width: 70%;
     float: left;
 }
 
 #table-wrap{
-    width: 50%;
+    width: 30%;
     float: right;
 }
 
