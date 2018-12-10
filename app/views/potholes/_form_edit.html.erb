@@ -1,0 +1,26 @@
+<%= form_with model: pothole, local: true do |form| %>
+
+    <div class = 'field'>
+        <%= form.label :name%>
+        <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class ="field">
+   		<%= form.label :latitude %>
+   		<%= form.text_field :lat, class: 'form-control' %>
+	</div>
+	
+	<div class ="field">
+   		<%= form.label :longitude %>
+   		<%= form.text_field :lon, class: 'form-control' %>
+	</div>
+
+	<div class = 'field'>
+    	<%= form.label :verified %>
+    	<%= form.select :verified,( ['false','true'])%>
+    </div>
+
+    <div class = 'action'>
+        <%= form.submit 'Edit pothole', class: 'btn btn-primary' %>
+    </div>
+<% end %>
