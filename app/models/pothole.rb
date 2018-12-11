@@ -23,9 +23,7 @@ class Pothole < ApplicationRecord
     foreign_key: 'user_id',
     inverse_of: :pins,
     optional: true
-    validates_uniqueness_of :lat, scope: [:lon], conditions: -> {
-        where.not(lat: [:lat-0.000005,:lat+0.000005],lon: [:lon-0.000005,:lon+0.000005])
-    }
+    validates :lat, uniqueness: { scope: :lon, message: "Pothole already submitted"}
 
 
 
