@@ -7,6 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if user_signed_in? %>
+        <%if User.find_by(id: current_user.id).theme?%>
+            <style>
+                nav * {
+                   font-size: 107%;
+                }
+            </style>
+        <%end%>
+    <%end%>
   </head>
   <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top", style= "padding-bottom: 0px; padding-top: 0px;">
@@ -38,7 +47,7 @@
     
         <% if user_signed_in? %>
             <div style="color: #68bd7e;">
-                Welcome, <%= current_user.first_name %>   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary', style: 'margin-left:15px'%>
+                Welcome, <%= current_user.first_name %>   <%= link_to 'Switch Theme', themeswitch_path(User.find_by(id: current_user.id)), :method => :put, class: 'btn btn-outline-primary', style: 'margin-left:15px'%>   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary', style: 'margin-left:15px'%>
             </div>   
         <% else %>         
             <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-outline-primary'%>

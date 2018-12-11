@@ -1,3 +1,7 @@
+<%if user_signed_in? && User.find_by(id: current_user.id).theme? %>
+<link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css"/>
+<%end%>
+
 <main role="main" class="container">
    
     <p>
