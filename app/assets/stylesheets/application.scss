@@ -10,16 +10,50 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ 
  */
 @import "bootstrap";
 
-div.field {
-    padding-top: 0.3rem;
-    padding-bottom: 0rem;
+body {
+    padding-top: 4rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+  
+div.field{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
-div.action{
-    padding-top: 0.8rem;
+div.container{
+    max-width: 1920px;
+    margin-left: 0px;
+    margin-right:0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+div.actions{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+div.field label, div.field input {
+    display: block;
+}
+div.invalid-feedback{
+    display: block;
+}
+
+#map{
+    width: 70%;
+    float: left;
+}
+
+#table-wrap{
+    width: 30%;
+    float: right;
+}
+
+#newform{
+    clear: both;
 }

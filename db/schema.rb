@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_064423) do
+ActiveRecord::Schema.define(version: 2018_12_11_073002) do
 
   create_table "potholes", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2018_11_27_064423) do
     t.integer "rating", default: 0
     t.boolean "duplicate", default: false
     t.boolean "fixed", default: false
+    t.string "photo_filename"
+    t.string "photo"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_064423) do
     t.string "last_name"
     t.boolean "admin"
     t.integer "pothole_id"
+    t.boolean "theme", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
