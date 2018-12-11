@@ -59,6 +59,11 @@
 				+'<div class ="field">'
 				+'<%= form.text_field :rating, class: 'form-control' %>'
 				+'</div>'
+				+'<%if pothole.photo_filename? %>'
+				+'<p>'
+				+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+				+'</p>'
+				+'<%end%>'
 				+'<div class="action">'
 				+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
 				+'</div>'
@@ -72,6 +77,11 @@
 				+'<div class ="field">'
 				+'<%= form.text_field :rating, class: 'form-control' %>'
 				+'</div>'
+				+'<%if pothole.photo_filename? %>'
+				+'<p>'
+				+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+				+'</p>'
+				+'<%end%>'
 				+'<div class="action">'
 				+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
 				+'</div>'
@@ -84,6 +94,11 @@
 				+'<div class ="field">'
 				+'<%= form.text_field :rating, class: 'form-control' %>'
 				+'</div>'
+				+'<%if pothole.photo_filename? %>'
+				+'<p>'
+				+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+				+'</p>'
+				+'<%end%>'
 				+'<div class="action">'
 				+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
 				+'</div>'
@@ -102,6 +117,11 @@
 					+'<div class ="field">'
 					+'<%= form.text_field :rating, class: 'form-control' %>'
 					+'</div>'
+					+'<%if pothole.photo_filename? %>'
+					+'<p>'
+					+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+					+'</p>'
+					+'<%end%>'
 					+'<div class="action">'
 					+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
 					+'</div>'
@@ -202,12 +222,30 @@
 	<script> //display all pin for non-member
 		<% @pothole.each do |pothole| %>
 				<%if pothole.fixed == true %>
-					L.marker([<%= pothole.lat %>, <%= pothole.lon %>],{icon: greenIcon}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(fixedP);
+					L.marker([<%= pothole.lat %>, <%= pothole.lon %>],{icon: greenIcon}).bindPopup('<p><b>Name: <%= pothole.name %></b></p>'
+						+'<p><b>Rating: <%= pothole.rating %></b></p>'
+						+'<%if pothole.photo_filename? %>'
+						+'<p>'
+						+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+						+'</p>'
+						+'<%end%>').addTo(fixedP);
 				<%end%>
 				<% if pothole.verified == true && pothole.fixed == false %>  // check to see if pot hole is verified
-					L.marker([<%= pothole.lat %>, <%= pothole.lon %>],{icon: redIcon}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(thatVerified);
+					L.marker([<%= pothole.lat %>, <%= pothole.lon %>],{icon: redIcon}).bindPopup('<p><b>Name: <%= pothole.name %></b></p>'
+						+'<p><b>Rating: <%= pothole.rating %></b></p>'
+						+'<%if pothole.photo_filename? %>'
+						+'<p>'
+						+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+						+'</p>'
+						+'<%end%>').addTo(thatVerified);
 					<%else if pothole.verified == false && pothole.fixed == false%>
-					L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {icon: yellowIcon}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(notVerified);
+					L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {icon: yellowIcon}).bindPopup('<p><b>Name: <%= pothole.name %></b></p>'
+						+'<p><b>Rating: <%= pothole.rating %></b></p>'
+						+'<%if pothole.photo_filename? %>'
+						+'<p>'
+						+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+						+'</p>'
+						+'<%end%>').addTo(notVerified);
 					<%end%>
 				<%end%>
 
