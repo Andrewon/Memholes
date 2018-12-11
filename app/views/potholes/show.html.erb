@@ -22,6 +22,10 @@
         <b> Fixed: </b> <%= @pothole.fixed%>
     </p>
 
+    <p>
+    <%= image_tag("/potholes/#{@pothole.id}/photo/#{@pothole.photo_filename}", width: "500") if @pothole.photo_filename? %>
+    </p>
+
     <% if user_signed_in? %>
     <!--<%= link_to 'Mark Duplicate', duplicate_path %> |-->
     <%= link_to 'Edit Pothole', edit_pothole_path %> |
