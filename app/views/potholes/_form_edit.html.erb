@@ -15,10 +15,12 @@
    		<%= form.text_field :lon, class: 'form-control' %>
 	</div>
 
-	<div class = 'field'>
-    	<%= form.label :verified %>
-    	<%= form.select :verified,( ['false','true'])%>
-    </div>
+  <% if current_user.admin? %>
+	   <div class = 'field'>
+    	 <%= form.label :verified %>
+    	 <%= form.select :verified,( ['false','true'])%>
+     </div>
+  <% end %>
 
   <div class = "field">
       <%= form.label :photo %>
