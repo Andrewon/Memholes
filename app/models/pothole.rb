@@ -23,6 +23,9 @@ class Pothole < ApplicationRecord
     foreign_key: 'user_id',
     inverse_of: :pins,
     optional: true
+    validates :lat, uniqueness: { scope: :lon, message: "Pothole already submitted"}
+
+
 
     attr_accessor :photo
 
