@@ -22,6 +22,8 @@ class PotholesController < ApplicationController
 
     def create
         @pothole = Pothole.new(params.permit(:user_id, :name, :lat, :lon, :photo))
+        @pothole.lat = (@pothole.lat * 200000.0).round / 200000.0
+        @pothole.lon = (@pothole.lon * 200000.0).round / 200000.0
         if @pothole.save
             redirect_to pothole_url(@pothole), notice: 'Pothole was submitted successfully.'
         else
