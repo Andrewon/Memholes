@@ -1,5 +1,5 @@
 class EmailMemphisMailer < ApplicationMailer
-	default :from => 'pothole@reddick.tech'
+	default :from => 'pothole@memphis.edu'
 
 	def send_pothole_email
     	mail( :to => 'dreddick@memphis.edu',
