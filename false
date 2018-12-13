@@ -1,3 +1,2 @@
       invoke  active_record
-      remove    db/migrate/20181126032628_add_duplicate_to_potholes.rb
-      create    db/migrate/20181126033505_add_duplicate_to_potholes.rb
+      create    db/migrate/20181212230157_add_user_permissions.rb

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # pothole_1 = Pothole.create!(:name => 'Test1', :rating => 10, :lat => 35.131649544539115, :lon => -90.04222869873047);
-user_1 = User.new(first_name: 'Danny', last_name: 'Chamberlin', email: 'dchmbrln@memphis.edu', password: 'M3mH0l3s!')
+user_1 = User.new(first_name: 'Danny', last_name: 'Chamberlin', email: 'dchmbrln@memphis.edu', password: 'M3mH0l3s!', admin: 'true')
 user_1.pins.build(:name => 'Test1', :rating => 10, :verified => true, :lat => 35.131650, :lon => -90.042230)
 user_1.pins.build(:name => 'Test2', :rating => 9, :lat => 35.147325, :lon => -90.029740)
 user_1.pins.build(:name => 'Test3', :rating => 8, :verified => true,:fixed => true, :lat => 35.179525, :lon => -90.031390)
