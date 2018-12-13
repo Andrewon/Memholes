@@ -1,5 +1,8 @@
 class PotholesController < ApplicationController
 
+    def new
+        @pothole = Pothole.new
+    end
     def edit_name
         @pothole = Pothole.find(params[:id])
     end
@@ -16,10 +19,6 @@ class PotholesController < ApplicationController
         @pothole = Pothole.find(params[:id])
     end
 
-    def new
-        @pothole = Pothole.new
-    end
-
     def create
         @pothole = Pothole.new(params.permit(:user_id, :name, :lat, :lon, :photo))
         @pothole.lat = (@pothole.lat * 200000.0).round / 200000.0
@@ -27,7 +26,7 @@ class PotholesController < ApplicationController
         if @pothole.save
             redirect_to pothole_url(@pothole), notice: 'Pothole was submitted successfully.'
         else
-            flash.now[:alert] = 'Error! Unable to submit pothole.'
+            redirect_to pothole_url(@pothole), alert: 'Error! Unable to submit pothole.'
             render :new
         end
     end
