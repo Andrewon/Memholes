@@ -8,7 +8,6 @@
 - Project Coordinator: Danny Chamberlin
 - Quality Assurance Czar: Thomas Goodman
 - Video Demo Creators:
-  - Andy Ta, 999
   - Danny Chamberlin, 999
 - Demo-Booth Operator: Andy Ta
 
@@ -78,25 +77,33 @@
 
 - Description: Change the default look of the pothole pin.
 - How to Evaluate: Pin should look different from the current blue pin.
-- Outcome of Task:
-- Issues:
-- Pull request:
+- Outcome of Task: Verified potholes now have a custom red pin, unverified potholes have yellow pin and fixed potholes have green pin.
+- Issues: #56
+- Pull request: #60
 
 ### Task 2: Option to see potholes submitted by all-user in user's homepage
 
 - Description: Query data for all potholes and display it on the map.
 - How to Evaluate: If the user is able to select the option to view all and the map display all potholes.
-- Outcome of Task:
-- Issues:
-- Pull request:
+- Outcome of Task: User's page now have "All Verified" option to display all verified potholes from our database.
+- Issues: #57
+- Pull request: #61
 
 ### Task 3: Add alert to the website
 
 - Description: Add an alert to submit, edit, sign-up and sign-in function...
 - How to Evaluate: Website should display an alert after user submit something.
-- Outcome of Task:
-- Issues:
-- Pull request:
+- Outcome of Task: The website now display alert on sign-up, sign-in, submit, edit and rate a potholes...
+- Issues: #58
+- Pull request: #63
+
+### Task 4: Add validation for Rating, Name
+
+- Description: Add validation to only accept rating from 1 to 3 and name of pothole have to be unique and can't be blank.
+- How to Evaluate: Rating should only accept input 1,2,3 and name can't be blank and duplicated.
+- Outcome of Task: User won't be able to input any rating other than 1,2,3 and wont be able to submit a pothole with duplicated or blank name.
+- Issues: #75
+- Pull request: #83
 
 ## Tasks:Danny Chamberlin
 
