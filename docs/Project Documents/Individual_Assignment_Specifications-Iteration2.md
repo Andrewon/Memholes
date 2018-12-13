@@ -10,7 +10,7 @@
 - Video Demo Creators:
   - Andy Ta, 999
   - Danny Chamberlin, 999
-- Demo-Booth Operator: Andy Ta
+- Demo-Booth Operator: Andy Ta, Danny Chamberlin
 
 ## Tasks:David Reddick
 
@@ -104,30 +104,30 @@
 
 - Description: Add tabbed-look navigation as in docs/Site Documents/UI-Sketch/Home_Logged_In.PNG
 - How to Evaluate: Does each page have the same tabs at the top and is the current page the "active" tab?
-- Outcome of Task: 
-- Issue:
-- Pull Request: 
+- Outcome of Task: Switched to Navbar as tabbed was more processor expensive and did not look as good
+- Issue: 47
+- Pull Request: 52
 
 ### Task 2: Get latitude/longitude from current location
 
 - Description: When creating a new pothole, ask to use current location and then display current coordinates
 - How to Evaluate: Does the current latitude and longitude display in pop-up?
-- Outcome of Task: 
-- Issue:
-- Pull Request: 
+- Outcome of Task: Not completed, unable to find usable API in timeframe given
+- Issue: 48
+- Pull Request: None
 
 ### Task 3: Identify Duplicate Potholes
 
 - Description: When creating a new pothole, database is checked to see if this pothole is reported based on Latitude and longitude
 - How to Evaluate: Create a pothole where a pothole already exists and see if the application reports the new submission as duplicate
-- Outcome of Task:
-- Issue:
-- Pull Request: 
+- Outcome of Task: If a pothole exists in the database with same latitude and longitude (rounded to nearest .00001), it will not allow it to be submitted
+- Issue: 49
+- Pull Request: 71
 
 ### Task 4: Reorganize homepage to match layout in Home_Logged_In.PNG and Home_Not_Logged_In.PNG
 
 - Description: Re-style the homepage to match the layout in the UI Sketches
 - How to Evaluate: Does the homepage look similar to the Home_Logged_In.PNG and Home_Not_Logged_In.PNG sketches?
-- Outcome of Task: 
-- Issue:
-- Pull Request:
+- Outcome of Task: Homepage re-organized as in image. Andy Ta tightened up the layout to look better and updated the map icons
+- Issue: 50
+- Pull Request: 51
