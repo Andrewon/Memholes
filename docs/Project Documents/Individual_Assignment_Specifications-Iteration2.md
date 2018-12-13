@@ -10,11 +10,7 @@
 - Video Demo Creators:
   - Andy Ta, 999
   - Danny Chamberlin, 999
-<<<<<<< HEAD
 - Demo-Booth Operator: Andy Ta, Danny Chamberlin
-=======
-- Demo-Booth Operator: Andy Ta & Danny Chamberlin
->>>>>>> ed07218f2769672557c903e25d3843c9e9b89884
 
 ## Tasks:David Reddick
 
