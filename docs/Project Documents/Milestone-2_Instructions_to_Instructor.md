@@ -7,8 +7,8 @@
 
 ## File Locations in Repository
 
-- Milestone 2 Individual Assignment Outcomes: docs/Project Documents/Individual_Assignment_Specifications-Iteration2.md
-- Who-Did-What Document for Demo Video: docs/Project Documents/who_did_what.md
+- Milestone 2 Individual Assignment Outcomes: docs/Project Documents/Individual_Assignment_Specifications-Iteration2.pdf
+- Who-Did-What Document for Demo Video: docs/Project Documents/who_did_what.pdf
 - Up-to-Date Requirements and Design Artifacts:
   - User stories: docs/Project Documents/UserStories.pdf
   - Sitemap: docs/Site Documents/MemHolesSitemap.png
