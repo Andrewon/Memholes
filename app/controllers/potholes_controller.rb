@@ -8,6 +8,8 @@ class PotholesController < ApplicationController
         @pothole = Pothole.find(params[:id])
         if @pothole.update(params.permit(:verify))
             EmailMemphisMailer.send_pothole_email
+        elsif @pothole.update(params.permit(:fixed))
+            EmailMemphisMailer.send_pothole_email            
         else
             redirect_to home_url
         end
