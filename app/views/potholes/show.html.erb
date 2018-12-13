@@ -1,3 +1,7 @@
+<%if user_signed_in? && User.find_by(id: current_user.id).theme? %>
+<link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css"/>
+<%end%>
+
 <main role="main" class="container">
    
     <p>
@@ -15,17 +19,30 @@
     <p>
         <b> Verify: </b> <%= @pothole.verified%>
     </p>
-    <p>
+    <!--<p>
         <b> Duplicate: </b> <%= @pothole.duplicate%>
-    </p>
+    </p>-->
     <p>
         <b> Fixed: </b> <%= @pothole.fixed%>
     </p>
 
+    <%if @pothole.photo_filename?%>
+    <p>
+    <%= image_tag("/potholes/#{@pothole.id}/photo/#{@pothole.photo_filename}", width: "500")%>
+    </p>
+    <%end%>
+    <%unless @pothole.photo_filename?%>
+    <p>
+        <b>No photo available.</b>
+    </p>
+    <%end%>
+
+
     <% if user_signed_in? %>
-    <%= link_to 'Mark Duplicate', duplicate_path %> |
+    <!--<%= link_to 'Mark Duplicate', duplicate_path %> |-->
     <%= link_to 'Edit Pothole', edit_pothole_path %> |
     <%= link_to 'Edit Name', edit_name_path %> |
+    <%= link_to 'Destroy', pothole_path, method: :delete if current_user.admin?%> |
     <% end %>
     <%= link_to 'Home', home_path, data: { turbolinks: false } %>
 </main>

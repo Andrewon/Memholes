@@ -15,10 +15,30 @@
    		<%= form.text_field :lon, class: 'form-control' %>
 	</div>
 
-	<div class = 'field'>
-    	<%= form.label :verified %>
-    	<%= form.select :verified,( ['false','true'])%>
-    </div>
+  <% if current_user.admin? %>
+	   <div class = 'field'>
+    	 <%= form.label :verified %>
+    	 <%= form.select :verified,( ['false','true'])%>
+     </div>
+     <div class = 'field'>
+       <%= form.label :fixed %>
+       <%= form.select :fixed,( ['false','true'])%>
+     </div>
+  <% end %>
+
+  <div class = "field">
+      <%= form.label :photo %>
+      <%= form.file_field :photo %>
+      <br>
+      <p>
+      <%if @pothole.photo_filename?%>
+      <%= image_tag("/potholes/#{@pothole.id}/photo/#{@pothole.photo_filename}", width: "500")%>
+      <%end%>
+      <% unless @pothole.photo_filename?%>
+      <b>No photo available.</b>
+      <%end%>
+      </p>
+  </div>
 
     <div class = 'action'>
         <%= form.submit 'Edit pothole', class: 'btn btn-primary' %>

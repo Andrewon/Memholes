@@ -1,10 +1,13 @@
-<h1>About Team YOUR_TEAM_NAME_GOES_HERE</h1>
+<%if user_signed_in? && User.find_by(id: current_user.id).theme? %>
+<link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css"/>
+<%end%>
+<h1 align="center">About Team Memholes</h1>
 
-<ul>
 
-<li>YOUR_LINKS_GO_HERE</li>
 
-</ul>
+<p>There are a lot of potholes in Memphis, and in a city that has a strong sense of community, we should have a way to not only list and track the potholes. The idea is simple. Let’s build a website that has a map layout of the city of Memphis. On this map are pins designated to the specific place that people have identified potholes. On this website, a user can add additional potholes.</p>
+
+
 
 <p>
 <%= link_to "Home", home_path %>

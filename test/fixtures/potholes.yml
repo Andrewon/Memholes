@@ -2,17 +2,19 @@
 #
 # Table name: potholes
 #
-#  id         :integer          not null, primary key
-#  duplicate  :boolean          default(FALSE)
-#  fixed      :boolean          default(FALSE)
-#  lat        :decimal(12, 10)
-#  lon        :decimal(13, 10)
-#  name       :string
-#  rating     :integer          default(0)
-#  verified   :boolean          default(FALSE)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer
+#  id             :integer          not null, primary key
+#  duplicate      :boolean          default(FALSE)
+#  fixed          :boolean          default(FALSE)
+#  lat            :decimal(12, 10)
+#  lon            :decimal(13, 10)
+#  name           :string
+#  photo          :string
+#  photo_filename :string
+#  rating         :integer          default(0)
+#  verified       :boolean          default(FALSE)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  user_id        :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

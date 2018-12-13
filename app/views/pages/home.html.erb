@@ -2,13 +2,35 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 
-<h1>Memholes
-<span class='float-right'><% if user_signed_in? %>
-Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'%>
-<% else %>
-<%= link_to 'Sign In', new_user_session_path, class: 'btn btn-outline-primary'%>
-<% end %></span></h1>
-<div id="map" style="height: 60vh;"></div>
+<%if user_signed_in? && User.find_by(id: current_user.id).theme? %>
+<link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css"/>
+<style>
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip,
+.leaflet-control {
+	background: #2B3E50;
+	color: #EBEBEB;
+	}
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
+	background-color: #2B3E50;
+	color: #EBEBEB;
+  }
+.leaflet-bar a:hover {
+	background-color: #CCC;
+	}
+</style>
+<%end%>
+
+
+<div class='container'>
+<div id="map" style="height: 80vh;"></div>
+
+<%if user_signed_in?%>
+	<script> //layer for all verified potholes in signed-in homepage.
+		var allP = new L.LayerGroup();
+	</script>
+<%end%>
+
 <script> // display map
 	var thatVerified = new L.LayerGroup(); //layer for verified potholes
 	var notVerified = new L.LayerGroup();  //layer for unverified potholes
@@ -20,7 +42,11 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 	layers:[thatVerified]  //only verified potholes is displayed by default
     });
 
+<%if user_signed_in? && User.find_by(id: current_user.id).theme? %>
+	L.tileLayer('https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=eb7e7c430fb64b4a9f071b476481601d', {
+<%else%>
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+<%end%>
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -30,97 +56,177 @@ Welcome, <%= current_user.first_name %> - My Pins <%= link_to 'Sign Out', destro
 
 
 </script>
+
+<script>// custom pothole pin
+	var LeafIcon = L.Icon.extend({
+			options: {
+				iconSize:     [17, 22],
+				iconAnchor:   [8, 21], // manually pick
+				popupAnchor:  [1, -10] //0,0 is at base of pin
+			}
+	});
+	var redIcon = new LeafIcon({iconUrl: '<%= image_url('verified.png')%>'}),
+		yellowIcon = new LeafIcon({iconUrl: '<%= image_url('unverified.png')%>'}),
+		greenIcon = new LeafIcon({iconUrl: '<%= image_url('fixed.png')%>'});
+		YRedIcon = new LeafIcon({iconUrl: '<%= image_url('your_verified.png')%>'});
+
+</script>
+
 <% if user_signed_in? %>
-<script>
-<% User.find_by(id: current_user.id).pins.each do |pothole| %>
-<%if pothole.fixed==true%>  // check to see if pot hole is verified
-	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true})
-	.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-10</b>'+'<br>'+' Current rating: '+'<%=pothole.rating%>'+
-	'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
-	+'<div class ="field">'
-	+'<%= form.text_field :rating, class: 'form-control' %>'
-	+'</div>'
-	+'<div class="action">'
-	+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
-	+'</div>'
-	+'<% end %>'//form end
-	).addTo(fixedP);
-	<%end%>
-<%if pothole.verified==true%>  // check to see if pot hole is verified
-	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true})
-	.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-10</b>'+'<br>'+' Current rating: '+'<%=pothole.rating%>'+
-	'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
-	+'<div class ="field">'
-	+'<%= form.text_field :rating, class: 'form-control' %>'
-	+'</div>'
-	+'<div class="action">'
-	+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
-	+'</div>'
-	+'<% end %>'//form end
-	).addTo(thatVerified);
-<%else%>
-L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true})
-	.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-10</b>'+'<br>'+' Current rating: '+'<%=pothole.rating%>'+
-	'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
-	+'<div class ="field">'
-	+'<%= form.text_field :rating, class: 'form-control' %>'
-	+'</div>'
-	+'<div class="action">'
-	+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
-	+'</div>'
-	+'<% end %>'//form end
-	).addTo(notVerified);
-<%end%> //if else end
-<%end%>// end loop
+	<script>
+		<% User.find_by(id: current_user.id).pins.each do |pothole| %>
+			<%if pothole.fixed==true%>  // check to see if pot hole is verified
+				L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {icon: greenIcon}) // by default: draggable => false, clickable =>true. not needed
+				.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-3</b>'+'<br>'+' <b>Current rating: '+'<%=pothole.rating%></b>'+
+				'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
+				+'<div class ="field">'
+				+'<%= form.text_field :rating, class: 'form-control' %>'
+				+'</div>'
+				+'<%if pothole.photo_filename? %>'
+				+'<p>'
+				+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+				+'</p>'
+				+'<%end%>'
+				+'<%unless pothole.photo_filename? %>'
+				+'<p>'
+				+'<b>No photo available.<br>Upload on the edit page!</b>'
+				+'</p>'
+				+'<%end%>'
+				+'<div class="action">'
+				+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
+				+'</div>'
+				+'<% end %>'//form end
+				).addTo(fixedP);
+				<%end%>
+			<%else if pothole.verified==true && pothole.fixed==false%>  // check to see if pot hole is verified
+				L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {icon: YRedIcon})
+				.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-3</b>'+'<br>'+' <b>Current rating: '+'<%=pothole.rating%></b>'+
+				'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
+				+'<div class ="field">'
+				+'<%= form.text_field :rating, class: 'form-control' %>'
+				+'</div>'
+				+'<%if pothole.photo_filename? %>'
+				+'<p>'
+				+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+				+'</p>'
+				+'<%end%>'
+				+'<%unless pothole.photo_filename? %>'
+				+'<p>'
+				+'<b>No photo available.<br>Upload on the edit page!</b>'
+				+'</p>'
+				+'<%end%>'
+				+'<div class="action">'
+				+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
+				+'</div>'
+				+'<% end %>'//form end
+				).addTo(thatVerified);
+			<%else if pothole.verified==false && pothole.fixed==false%>
+			L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {icon: yellowIcon})
+				.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-3</b>'+'<br>'+' <b>Current rating: '+'<%=pothole.rating%></b>'+
+				'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
+				+'<div class ="field">'
+				+'<%= form.text_field :rating, class: 'form-control' %>'
+				+'</div>'
+				+'<%if pothole.photo_filename? %>'
+				+'<p>'
+				+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+				+'</p>'
+				+'<%end%>'
+				+'<%unless pothole.photo_filename? %>'
+				+'<p>'
+				+'<b>No photo available.<br>Upload on the edit page!</b>'
+				+'</p>'
+				+'<%end%>'
+				+'<div class="action">'
+				+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
+				+'</div>'
+				+'<% end %>'//form end
+				).addTo(notVerified);
+			<%end%> //if end
+			<%end%> // else if end
 
-	var overlays = {
-		"Verified Potholes": thatVerified,
-		"Not Verified": notVerified,
-		"Fixed": fixedP
-		};
+		<%end%>// end loop
 
-	L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
-
-</script>
-<script>
-
-	var popup = L.popup();
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent(
-			'<%= form_with url: new_pothole_path do |form| %>'
-			+'<div class ="field">'
-			+'<%= form.hidden_field :user_id, class: 'form-control', value: current_user.id, readonly: true %>'
-			+'</div>'
-			+'<div class ="field">'
-			+'<%= form.label :name %>'
-			+'<%= form.text_field :name, class: 'form-control' %>'
-			+'</div>'
-			+'<div class ="field">'
-			+'<%= form.label :latitude %>'
-			+'<%= form.text_field :lat, class: 'form-control' %>'
-			+'</div>'
-			+'<div class ="field">'
-			+'<%= form.label :longitude %>'
-			+'<%= form.text_field :lon, class: 'form-control' %>'
-			+'</div>'
-			+'<div class="action">'
-			+'<%= form.submit 'Submit pothole', class: 'btn btn-primary'%>'
-			+'</div>'
-			+'<% end %>')
-			.openOn(mymap);
-		document.getElementById("lat").value = e.latlng.lat;
-		document.getElementById("lon").value = e.latlng.lng;
+		<% @pothole.each do |pothole| %>//getting all verified pothole from all user
+			<%if pothole.verified==true && pothole.fixed==false%>  
+					L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {icon: redIcon})
+					.bindPopup('<b>Rate</b> "'+'<b><%=pothole.name%></b>'+'" <b>from 1-3</b>'+'<br>'+' <b>Current rating: '+'<%=pothole.rating%></b>'+
+					'<%= form_with url: edit_pothole2_path(pothole.id) do |form| %>'
+					+'<div class ="field">'
+					+'<%= form.text_field :rating, class: 'form-control' %>'
+					+'</div>'
+					+'<%if pothole.photo_filename? %>'
+					+'<p>'
+					+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+					+'</p>'
+					+'<%end%>'
+					+'<%unless pothole.photo_filename? %>'
+					+'<p>'
+					+'<b>No photo available.</b>'
+					+'</p>'
+					+'<%end%>'
+					+'<div class="action">'
+					+'<%= form.submit 'Submit Rating', class: 'btn btn-primary'%>'
+					+'</div>'
+					+'<% end %>'//form end
+					).addTo(allP);
+			<%end%>
+		<%end%>
 		
-	}
-	mymap.on('click', onMapClick);
-		
 
-</script>
+		var overlays = {
+			"Your & Verified": thatVerified,
+			"Not Verified": notVerified,
+			"Fixed": fixedP,
+			"All Verified": allP
+			};
+
+		L.control.layers(null,overlays,{collapsed:true}).addTo(mymap);
+
+	</script>
+	<script>
+
+		var popup = L.popup();
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent(
+				'<%= form_with url: new_pothole_path do |form| %>'
+				+'<div class ="field">'
+				+'<%= form.hidden_field :user_id, class: 'form-control', value: current_user.id, readonly: true %>'
+				+'</div>'
+				+'<div class ="field">'
+				+'<b><%= form.label :name %></b>'
+				+'<%= form.text_field :name, class: 'form-control' %>'
+				+'</div>'
+				+'<div class ="field">'
+				+'<b><%= form.label :latitude %></b>'
+				+'<%= form.text_field :lat, class: 'form-control' %>'
+				+'</div>'
+				+'<div class ="field">'
+				+'<b><%= form.label :longitude %></b>'
+				+'<%= form.text_field :lon, class: 'form-control' %>'
+				+'</div>'
+				+'<div class = "field", style="overflow: auto">'
+				+'<b><%= form.label :photo %></b>'
+				+'<%= form.file_field :photo %>'
+				+'</div>'
+				+'<div class="action">'
+				+'<%= form.submit 'Submit pothole', class: 'btn btn-primary'%>'
+				+'</div>'
+				+'<% end %>')
+				.openOn(mymap);
+			document.getElementById("lat").value = e.latlng.lat;
+			document.getElementById("lon").value = e.latlng.lng;
+			
+		}
+		mymap.on('click', onMapClick);
+			
+
+	</script>
 
 <div id="table-wrap">
-<div id="table-scroll" style="max-height: 30vh; overflow: auto;">
+<div id="table-scroll" style="max-height: 80vh; overflow: auto;">
 <table class="table table-sm" style="table-layout: auto;">
 	<thead>
 		<tr>
@@ -149,34 +255,78 @@ L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable:
 </table>
 </div>
 </div>
+<div style='float:left;'>
+<h4>Click anywhere on the map to report a pothole.</h4>
+</div>
+
+
+
 <% else %>
+	<script> //display all pin for non-member
+		<% @pothole.each do |pothole| %>
+				<%if pothole.fixed == true %>
+					L.marker([<%= pothole.lat %>, <%= pothole.lon %>],{icon: greenIcon}).bindPopup('<p><b>Name: <%= pothole.name %></b></p>'
+						+'<p><b>Rating: <%= pothole.rating %></b></p>'
+						+'<%if pothole.photo_filename? %>'
+						+'<p>'
+						+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+						+'</p>'
+						+'<%end%>'
+						+'<%unless pothole.photo_filename? %>'
+						+'<p>'
+						+'<b>No photo available.</b>'
+						+'</p>'
+						+'<%end%>').addTo(fixedP);
+				<%end%>
+				<% if pothole.verified == true && pothole.fixed == false %>  // check to see if pot hole is verified
+					L.marker([<%= pothole.lat %>, <%= pothole.lon %>],{icon: redIcon}).bindPopup('<p><b>Name: <%= pothole.name %></b></p>'
+						+'<p><b>Rating: <%= pothole.rating %></b></p>'
+						+'<%if pothole.photo_filename? %>'
+						+'<p>'
+						+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+						+'</p>'
+						+'<%end%>'
+						+'<%unless pothole.photo_filename? %>'
+						+'<p>'
+						+'<b>No photo available.</b>'
+						+'</p>'
+						+'<%end%>').addTo(thatVerified);
+					<%else if pothole.verified == false && pothole.fixed == false%>
+					L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {icon: yellowIcon}).bindPopup('<p><b>Name: <%= pothole.name %></b></p>'
+						+'<p><b>Rating: <%= pothole.rating %></b></p>'
+						+'<%if pothole.photo_filename? %>'
+						+'<p>'
+						+'<%= image_tag("/potholes/#{pothole.id}/photo/#{pothole.photo_filename}", width: "200") %>'
+						+'</p>'
+						+'<%end%>'
+						+'<%unless pothole.photo_filename? %>'
+						+'<p>'
+						+'<b>No photo available.</b>'
+						+'</p>'
+						+'<%end%>').addTo(notVerified);
+					<%end%>
+				<%end%>
 
-<script> //display all pin for non-member
+		<%end%>
 
-<% @pothole.each do |pothole| %>
-	<%if pothole.fixed == true %>
-	L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(fixedP);
-	<%end%>
-	<% if pothole.verified == true %>  // check to see if pot hole is verified
-		L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(thatVerified);
-	<%else%>
-		L.marker([<%= pothole.lat %>, <%= pothole.lon %>], {draggable: false, clickable: true}).bindPopup("Name: <%= pothole.name %><p>Rating: <%= pothole.rating %></p>").addTo(notVerified);
-	<%end%>
 
-<%end%>
+		var overlays = {  // add filter to map
+			"Verified Potholes": thatVerified,
+			"Not Verified": notVerified,
+			"Fixed": fixedP
+			};
 
-var overlays = {  // add filter to map
-	"Verified Potholes": thatVerified,
-	"Not Verified": notVerified,
-	"Fixed": fixedP
-	};
+		L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
 
-L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
 
-</script>
+
+	</script>
+
+
+
 
 <div id="table-wrap">
-<div id="table-scroll" style="max-height: 30vh; overflow: auto;">
+<div id="table-scroll" style="max-height: 80vh; overflow: auto;">
 <table class="table table-sm" style="table-layout: auto;">
 	<thead>
 		<tr>
@@ -205,4 +355,6 @@ L.control.layers(null,overlays,{collapsed:false}).addTo(mymap);
 </table>
 </div>
 </div>
+<h4>Start reporting potholes today: <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-outline-primary', style: "margin-top:5px;padding-top: 1px;padding-bottom: 4px;"%></h4>
 <% end %>
+</div>
