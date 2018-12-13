@@ -15,6 +15,14 @@ class PotholesController < ApplicationController
         end
     end
 
+    def destroy
+        @pothole = Pothole.find(params[:id])
+        if @pothole.present?
+          @pothole.destroy
+        end
+        redirect_to home_url
+    end
+
     def show
         @pothole = Pothole.find(params[:id])
     end
