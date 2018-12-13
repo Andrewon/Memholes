@@ -24,6 +24,8 @@ class Pothole < ApplicationRecord
     inverse_of: :pins,
     optional: true
     validates :lat, uniqueness: { scope: :lon, message: "Pothole already submitted"}
+    validates :name, uniqueness: { message: "duplicated name"}, presence: true
+    validates :rating, numericality: { greater_than: 0, less_than_or_equal_to: 3 }
 
 
 
