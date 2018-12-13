@@ -51,25 +51,25 @@
 
 - Description: Allow users to choose between a light and dark theme, if logged in. A variable will be stored in the database to make the user's preference consistent
 - How to Evaluate: User can select themes. Also, the theme setting must be persistent.
-- Outcome of Task: 
-- Issue:
-- Pull Request: 
+- Outcome of Task: A theme switching button appears in the navbar when users log in. Pressing it makes a persistent change (with a theme variable in the DB) to the light or dark theme, depending on their current theme. Pressing the button a second time will reverse the theme change. Users can do this as many times as desired.
+- Issue: 53
+- Pull Request: 68, 72
 
 ### Task 2: Attach Picture
 
 - Description: Users can upload pictures to their own pothole reports, so others can see what the pothole looks like. This will require integrating a file uploader, like CarrierWave. The filename will be stored in a field in the database.
 - How to Evaluate: User can upload pictures on the editor for their pothole reports.
-- Outcome of Task: 
-- Issue:
-- Pull Request: 
+- Outcome of Task: Users can upload a photo for their own (and only their own) pothole reports. This can be done after the fact on the edit page for a pothole report, or upon creation of the pothole with the popup dialog on the map.
+- Issue: 54
+- Pull Request: 64
 
 ### Task 3: Display Picture
 
 - Description: All users can view pictures attached to pothole reports by clicking on the pins or visiting the view pages for the potholes. This will require modifications to the popup and view page code.
 - How to Evaluate: If a picture (if attached) is displayed when users view pothole pins/reports.
-- Outcome of Task:
-- Issue:
-- Pull Request: 
+- Outcome of Task: When users click on a pothole pin on the map, a picture of the pothole is displayed in the popup. If one is not present, a message signifying the lack of a picture is displayed instead. If the pothole pin is for one of the user's own reports, a longer version of the message that suggests going to the edit page and uploading a photo will be displayed. A picture (if attached) will also be displayed on the view page for a pothole report. The view page also has a message that is displayed if no picture is available.
+- Issue: 55
+- Pull Request: 65, 66, 67
 
 ## Tasks:Andy Ta
 
