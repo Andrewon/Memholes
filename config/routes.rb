@@ -21,8 +21,10 @@ Rails.application.routes.draw do
   get 'potholes/:id', to: 'potholes#show', as: 'pothole'
   patch 'potholes/:id', to: 'potholes#update'
   put 'potholes/:id', to: 'potholes#update'
+  delete 'potholes/:id', to: 'potholes#destroy'
   get 'users/:id', to: 'users#show_pins', as: 'user'
   put 'user/:id', to: 'user#themeswitch', as: 'themeswitch'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
