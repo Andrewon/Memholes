@@ -6,6 +6,11 @@ class PotholesController < ApplicationController
 
     def edit_pothole
         @pothole = Pothole.find(params[:id])
+        if @pothole.update(params.permit(:verify))
+            EmailMemphisMailer.send_pothole_email
+        else
+            redirect_to home_url
+        end
     end
 
     def show
