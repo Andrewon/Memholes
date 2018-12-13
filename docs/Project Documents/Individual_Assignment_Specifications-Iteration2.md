@@ -10,7 +10,7 @@
 - Video Demo Creators:
   - Andy Ta, 999
   - Danny Chamberlin, 999
-- Demo-Booth Operator: Andy Ta
+- Demo-Booth Operator: Andy Ta & Danny Chamberlin
 
 ## Tasks:David Reddick
 
@@ -18,33 +18,33 @@
 
 - Description: When a pothole is marked verified send a scripted email with relevant information.
 - How to Evaluate: Does an automated email get sent when requirements are met?
-- Outcome of Task: 
-- Issue:
-- Pull Request: 
+- Outcome of Task: Code for sending an email when a pothole is marked as verify exists but the Memphis firewalls prevent the emails from sending properly.
+- Issue: #69
+- Pull Request: #77
 
 ### Task 2: Send Email to Submitter
 
 - Description: When a pothole is marked as fixed, send a scripted email to pothole submitter.
 - How to Evaluate: Does an automated email get sent when requirements are met?
-- Outcome of Task: 
-- Issue:
-- Pull Request: 
+- Outcome of Task: Code for sending an email when a pothole is marked as fixed exists but the Memphis firewalls prevent the emails from sending properly.
+- Issue: #70
+- Pull Request: #80
 
-### Task 3: Fixed Pothole
+### Task 3: Allow Admin to Delete Pothole
 
-- Description: Update reported pothole as fixed when marked.
-- How to Evaluate: Able to mark pothole as fixed from website and have database updated.
-- Outcome of Task:
-- Issue:
-- Pull Request: 
+- Description: Only allow admin to delete an existing pothole.
+- How to Evaluate: Able to delete a pothole from the website and have database updated but only if user is logged in as an admin.
+- Outcome of Task: A user who is an admin is the only one who can see the option and select the option to delete a pothole.
+- Issue: #81
+- Pull Request: #82
 
 ### Task 4: Mark Pothole as Verified if Admin
 
 - Description: Only allow admin to mark a pothole as verified.
 - How to Evaluate: Able to mark pothole as verified from website and have database updated but only if user is logged in as an admin.
-- Outcome of Task: 
-- Issue:
-- Pull Request: 
+- Outcome of Task: A user who is an admin is the only one who can see the option and change a pothole's verification state.
+- Issue: #78
+- Pull Request: #79 
 
 ## Tasks: "Ty" Thomas Goodman
 
